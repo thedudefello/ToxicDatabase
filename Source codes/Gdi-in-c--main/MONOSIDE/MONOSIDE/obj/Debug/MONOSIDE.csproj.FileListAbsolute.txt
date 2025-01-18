@@ -1,0 +1,7 @@
+D:\c#\MONOSIDE\MONOSIDE\bin\Debug\MONOSIDE.exe.config
+D:\c#\MONOSIDE\MONOSIDE\bin\Debug\MONOSIDE.exe
+D:\c#\MONOSIDE\MONOSIDE\bin\Debug\MONOSIDE.pdb
+D:\c#\MONOSIDE\MONOSIDE\obj\Debug\MONOSIDE.csproj.AssemblyReference.cache
+D:\c#\MONOSIDE\MONOSIDE\obj\Debug\MONOSIDE.csproj.CoreCompileInputs.cache
+D:\c#\MONOSIDE\MONOSIDE\obj\Debug\MONOSIDE.exe
+D:\c#\MONOSIDE\MONOSIDE\obj\Debug\MONOSIDE.pdb

@@ -1,0 +1,7 @@
+D:\c#\GDI\GDI\obj\Debug\GDI.csproj.AssemblyReference.cache
+D:\c#\GDI\GDI\obj\Debug\GDI.csproj.CoreCompileInputs.cache
+D:\c#\GDI\GDI\bin\Debug\GDI.exe.config
+D:\c#\GDI\GDI\bin\Debug\GDI.exe
+D:\c#\GDI\GDI\bin\Debug\GDI.pdb
+D:\c#\GDI\GDI\obj\Debug\GDI.exe
+D:\c#\GDI\GDI\obj\Debug\GDI.pdb

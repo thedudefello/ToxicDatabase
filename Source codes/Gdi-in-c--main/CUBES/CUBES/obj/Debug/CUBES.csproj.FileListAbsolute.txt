@@ -1,0 +1,7 @@
+D:\c#\CUBES\CUBES\bin\Debug\CUBES.exe.config
+D:\c#\CUBES\CUBES\bin\Debug\CUBES.exe
+D:\c#\CUBES\CUBES\bin\Debug\CUBES.pdb
+D:\c#\CUBES\CUBES\obj\Debug\CUBES.csproj.AssemblyReference.cache
+D:\c#\CUBES\CUBES\obj\Debug\CUBES.csproj.CoreCompileInputs.cache
+D:\c#\CUBES\CUBES\obj\Debug\CUBES.exe
+D:\c#\CUBES\CUBES\obj\Debug\CUBES.pdb

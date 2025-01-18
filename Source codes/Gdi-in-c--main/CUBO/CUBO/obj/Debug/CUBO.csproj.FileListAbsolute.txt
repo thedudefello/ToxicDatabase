@@ -1,0 +1,7 @@
+D:\c#\CUBO\CUBO\bin\Debug\CUBO.exe.config
+D:\c#\CUBO\CUBO\bin\Debug\CUBO.exe
+D:\c#\CUBO\CUBO\bin\Debug\CUBO.pdb
+D:\c#\CUBO\CUBO\obj\Debug\CUBO.csproj.AssemblyReference.cache
+D:\c#\CUBO\CUBO\obj\Debug\CUBO.csproj.CoreCompileInputs.cache
+D:\c#\CUBO\CUBO\obj\Debug\CUBO.exe
+D:\c#\CUBO\CUBO\obj\Debug\CUBO.pdb
