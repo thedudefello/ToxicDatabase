@@ -1,0 +1,7 @@
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\bin\Debug\RIPPER 4.0.exe.config
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\bin\Debug\RIPPER 4.0.exe
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\bin\Debug\RIPPER 4.0.pdb
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\obj\Debug\RIPPER 4.0.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\obj\Debug\RIPPER 4.0.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\obj\Debug\RIPPER 4.0.exe
+C:\Users\hp\source\repos\RIPPER 4.0\RIPPER 4.0\obj\Debug\RIPPER 4.0.pdb
