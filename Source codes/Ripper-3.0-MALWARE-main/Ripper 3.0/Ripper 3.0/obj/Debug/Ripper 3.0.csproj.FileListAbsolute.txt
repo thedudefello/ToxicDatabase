@@ -1,0 +1,7 @@
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\bin\Debug\Ripper 3.0.exe.config
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\bin\Debug\Ripper 3.0.exe
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\bin\Debug\Ripper 3.0.pdb
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\obj\Debug\Ripper 3.0.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\obj\Debug\Ripper 3.0.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\obj\Debug\Ripper 3.0.exe
+C:\Users\hp\Desktop\Ripper 3.0\Ripper 3.0\obj\Debug\Ripper 3.0.pdb

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIP EYE", "RIP EYE\RIP EYE.csproj", "{06CB2A06-570C-4D42-BAA9-2D023B4015DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06CB2A06-570C-4D42-BAA9-2D023B4015DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CB2A06-570C-4D42-BAA9-2D023B4015DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CB2A06-570C-4D42-BAA9-2D023B4015DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CB2A06-570C-4D42-BAA9-2D023B4015DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A1D507A-C6C3-4737-8226-9BEE10BFF1D6}
+	EndGlobalSection
+EndGlobal

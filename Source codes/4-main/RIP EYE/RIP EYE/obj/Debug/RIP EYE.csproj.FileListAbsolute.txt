@@ -1,0 +1,7 @@
+D:\c#\RIP EYE\RIP EYE\bin\Debug\RIP EYE.exe.config
+D:\c#\RIP EYE\RIP EYE\bin\Debug\RIP EYE.exe
+D:\c#\RIP EYE\RIP EYE\bin\Debug\RIP EYE.pdb
+D:\c#\RIP EYE\RIP EYE\obj\Debug\RIP EYE.csproj.AssemblyReference.cache
+D:\c#\RIP EYE\RIP EYE\obj\Debug\RIP EYE.csproj.CoreCompileInputs.cache
+D:\c#\RIP EYE\RIP EYE\obj\Debug\RIP EYE.exe
+D:\c#\RIP EYE\RIP EYE\obj\Debug\RIP EYE.pdb
