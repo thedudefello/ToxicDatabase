@@ -1,0 +1,6 @@
+C:\Users\giamp\Desktop\Solaris\Solaris\bin\Debug\Solaris.exe
+C:\Users\giamp\Desktop\Solaris\Solaris\bin\Debug\Solaris.pdb
+C:\Users\giamp\Desktop\Solaris\Solaris\obj\Debug\Solaris.csproj.AssemblyReference.cache
+C:\Users\giamp\Desktop\Solaris\Solaris\obj\Debug\Solaris.csproj.CoreCompileInputs.cache
+C:\Users\giamp\Desktop\Solaris\Solaris\obj\Debug\Solaris.exe
+C:\Users\giamp\Desktop\Solaris\Solaris\obj\Debug\Solaris.pdb

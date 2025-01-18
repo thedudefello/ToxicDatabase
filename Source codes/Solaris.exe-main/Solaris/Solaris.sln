@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34902.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solaris", "Solaris\Solaris.csproj", "{7E555414-49AD-4E9A-BA7C-256E73C77512}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E555414-49AD-4E9A-BA7C-256E73C77512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E555414-49AD-4E9A-BA7C-256E73C77512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E555414-49AD-4E9A-BA7C-256E73C77512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E555414-49AD-4E9A-BA7C-256E73C77512}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C62338D7-F50F-4CA3-81C8-D66A75B9FEE0}
+	EndGlobalSection
+EndGlobal
