@@ -1,0 +1,7 @@
+C:\Users\hp\Source\Repos\Nix\Nix\bin\Debug\Nix.exe.config
+C:\Users\hp\Source\Repos\Nix\Nix\bin\Debug\Nix.exe
+C:\Users\hp\Source\Repos\Nix\Nix\bin\Debug\Nix.pdb
+C:\Users\hp\Source\Repos\Nix\Nix\obj\Debug\Nix.csproj.AssemblyReference.cache
+C:\Users\hp\Source\Repos\Nix\Nix\obj\Debug\Nix.csproj.CoreCompileInputs.cache
+C:\Users\hp\Source\Repos\Nix\Nix\obj\Debug\Nix.exe
+C:\Users\hp\Source\Repos\Nix\Nix\obj\Debug\Nix.pdb
