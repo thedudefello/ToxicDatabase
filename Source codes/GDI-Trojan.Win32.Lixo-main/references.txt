@@ -1,0 +1,10 @@
+Old-School Plasma: https://lodev.org/cgtutor/plasma.html
+HSL Function: https://github.com/whypet/Monoxide/blob/main/Monoxide/color.c
+MBR Overwritter: https://github.com/SleepMod/Overwrite-MBR/blob/master/Source.cpp
+RGBQUAD: https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-rgbquad
+
+Assembly:
+INT 10h Functions: https://drive.google.com/file/d/1J5M5CIix2kYfdZU2MPDh8jEV4sU3eIUa/view
+BIOS Color Attributes: https://en.wikipedia.org/wiki/BIOS_color_attributes
+Mode 13h: https://en.wikipedia.org/wiki/Mode_13h
+FPU: https://en.wikibooks.org/wiki/X86_Assembly/Floating_Point
