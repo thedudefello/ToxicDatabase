@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (2,3,7,8-Tetrachlorodibenzodioxin.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  2,3,7,8-Tetrachlorodibenzodioxin-safety.cpp
+  Trwa generowanie kodu
+  All 33 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Zakończono generowanie kodu
+  2,3,7,8-Tetrachlorodibenzodioxin.vcxproj -> C:\Users\ACER\source\repos\2,3,7,8-Tetrachlorodibenzodioxin-safety\Release\2,3,7,8-Tetrachlorodibenzodioxin-safety.exe
+  2,3,7,8-Tetrachlorodibenzodioxin.vcxproj -> C:\Users\ACER\source\repos\2,3,7,8-Tetrachlorodibenzodioxin-safety\Release\2,3,7,8-Tetrachlorodibenzodioxin-safety.pdb (Full PDB)

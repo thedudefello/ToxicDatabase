@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2,3,7,8-Tetrachlorodibenzodioxin", "2,3,7,8-Tetrachlorodibenzodioxin\2,3,7,8-Tetrachlorodibenzodioxin.vcxproj", "{5DEA96DF-DF15-4364-B17D-ABB64B44461E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Debug|x64.ActiveCfg = Debug|x64
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Debug|x64.Build.0 = Debug|x64
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Debug|x86.ActiveCfg = Debug|Win32
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Debug|x86.Build.0 = Debug|Win32
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Release|x64.ActiveCfg = Release|x64
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Release|x64.Build.0 = Release|x64
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Release|x86.ActiveCfg = Release|Win32
+		{5DEA96DF-DF15-4364-B17D-ABB64B44461E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A65FF99-BC31-403C-A418-4E2D643D4513}
+	EndGlobalSection
+EndGlobal
