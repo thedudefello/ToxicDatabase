@@ -1,0 +1,8 @@
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\bin\Release\Dead Fish.exe
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\bin\Release\Dead Fish.pdb
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\obj\Release\Dead Fish.csproj.AssemblyReference.cache
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\obj\Release\Dead_Fish.Properties.Resources.resources
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\obj\Release\Dead Fish.csproj.GenerateResource.cache
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\obj\Release\Dead Fish.csproj.CoreCompileInputs.cache
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\obj\Release\Dead Fish.exe
+C:\Users\Kapi\source\repos\Dead Fish\Dead Fish\obj\Release\Dead Fish.pdb

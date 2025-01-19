@@ -1,0 +1,8 @@
+C:\Users\Kapi\source\repos\coore32\coore32\bin\Debug\coore32.exe
+C:\Users\Kapi\source\repos\coore32\coore32\bin\Debug\coore32.pdb
+C:\Users\Kapi\source\repos\coore32\coore32\obj\Debug\coore32.csproj.AssemblyReference.cache
+C:\Users\Kapi\source\repos\coore32\coore32\obj\Debug\coore32.Properties.Resources.resources
+C:\Users\Kapi\source\repos\coore32\coore32\obj\Debug\coore32.csproj.GenerateResource.cache
+C:\Users\Kapi\source\repos\coore32\coore32\obj\Debug\coore32.csproj.CoreCompileInputs.cache
+C:\Users\Kapi\source\repos\coore32\coore32\obj\Debug\coore32.exe
+C:\Users\Kapi\source\repos\coore32\coore32\obj\Debug\coore32.pdb
