@@ -1,0 +1,11 @@
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\bin\Debug\Bitmap Process.exe.config
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\bin\Debug\Bitmap Process.exe
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\bin\Debug\Bitmap Process.pdb
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\bin\Debug\WinApiGdi32.dll.config
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.csproj.CoreCompileInputs.cache
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.csproj.Fody.CopyLocal.cache
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.csproj.CopyComplete
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.exe
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.pdb
+C:\Users\jena0\source\repos\Bitmap Process\Bitmap Process\obj\Debug\Bitmap Process.csproj.AssemblyReference.cache

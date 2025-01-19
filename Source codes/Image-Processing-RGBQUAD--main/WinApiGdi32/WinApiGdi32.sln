@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34931.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinApiGdi32", "WinApiGdi32\WinApiGdi32.csproj", "{29F09880-2005-4C57-BAB0-8C00C296973A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29F09880-2005-4C57-BAB0-8C00C296973A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F09880-2005-4C57-BAB0-8C00C296973A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F09880-2005-4C57-BAB0-8C00C296973A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F09880-2005-4C57-BAB0-8C00C296973A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3955DCA1-4436-4D6E-8D8A-FC8A189E0F61}
+	EndGlobalSection
+EndGlobal

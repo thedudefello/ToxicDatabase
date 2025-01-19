@@ -1,0 +1,6 @@
+C:\Users\jena0\source\repos\WinApiGdi32\WinApiGdi32\bin\Debug\WinApiGdi32.dll.config
+C:\Users\jena0\source\repos\WinApiGdi32\WinApiGdi32\bin\Debug\WinApiGdi32.dll
+C:\Users\jena0\source\repos\WinApiGdi32\WinApiGdi32\bin\Debug\WinApiGdi32.pdb
+C:\Users\jena0\source\repos\WinApiGdi32\WinApiGdi32\obj\Debug\WinApiGdi32.csproj.CoreCompileInputs.cache
+C:\Users\jena0\source\repos\WinApiGdi32\WinApiGdi32\obj\Debug\WinApiGdi32.dll
+C:\Users\jena0\source\repos\WinApiGdi32\WinApiGdi32\obj\Debug\WinApiGdi32.pdb
