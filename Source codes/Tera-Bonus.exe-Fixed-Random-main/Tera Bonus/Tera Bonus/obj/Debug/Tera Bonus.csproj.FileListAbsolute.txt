@@ -1,0 +1,9 @@
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\bin\Debug\Tera Bonus.exe
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\bin\Debug\Tera Bonus.pdb
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera Bonus.csproj.AssemblyReference.cache
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera_Bonus.Form1.resources
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera_Bonus.Properties.Resources.resources
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera Bonus.csproj.GenerateResource.cache
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera Bonus.csproj.CoreCompileInputs.cache
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera Bonus.exe
+C:\Users\Kapi\source\repos\Tera Bonus\Tera Bonus\obj\Debug\Tera Bonus.pdb

@@ -1,0 +1,8 @@
+C:\Users\Kapi\source\repos\m0dules\m0dules\bin\Debug\m0dules.exe
+C:\Users\Kapi\source\repos\m0dules\m0dules\bin\Debug\m0dules.pdb
+C:\Users\Kapi\source\repos\m0dules\m0dules\obj\Debug\m0dules.csproj.AssemblyReference.cache
+C:\Users\Kapi\source\repos\m0dules\m0dules\obj\Debug\m0dules.Properties.Resources.resources
+C:\Users\Kapi\source\repos\m0dules\m0dules\obj\Debug\m0dules.csproj.GenerateResource.cache
+C:\Users\Kapi\source\repos\m0dules\m0dules\obj\Debug\m0dules.csproj.CoreCompileInputs.cache
+C:\Users\Kapi\source\repos\m0dules\m0dules\obj\Debug\m0dules.exe
+C:\Users\Kapi\source\repos\m0dules\m0dules\obj\Debug\m0dules.pdb
