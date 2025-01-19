@@ -1,0 +1,10 @@
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.csproj.AssemblyReference.cache
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.Properties.Resources.resources
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.csproj.GenerateResource.cache
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.csproj.CoreCompileInputs.cache
+C:\Users\kapi2\source\repos\ico\ico\bin\Debug\ico.exe
+C:\Users\kapi2\source\repos\ico\ico\bin\Debug\ico.pdb
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.exe
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.pdb
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.Form1.resources
+C:\Users\kapi2\source\repos\ico\ico\obj\Debug\ico.Form2.resources
