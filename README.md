@@ -6,10 +6,10 @@ If you are sure that you want to explore it, below is a clickable element that w
 <details>
 <summary>🔒I am sure, I know what I am doing</summary>
 
-- **infected**
-<details>
+**infected**
 
-# ERRORS
+
+## ERRORS
 If you find an error in the archives, like a wrong password or corrupt, feel free to make an Issue in the Issues tab, but read the FAQ first before doing so, thanks!
 
 # FAQ
