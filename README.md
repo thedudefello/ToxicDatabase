@@ -1,6 +1,6 @@
 # Toxic Database
 
-$\color{#D29922}\textsf{\Large\&#x26A0;\kern{0.2cm}\normalsize Warning}$
+
 
 It's just another Malware Database, y'know the drill, don't download this stuff unless you know what you're doing, the pass for the archives is at the bottom.
 
