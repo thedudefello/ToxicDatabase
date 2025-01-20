@@ -1,15 +1,11 @@
 # Toxic Database
-It's just another Malware Database, y'know the drill, don't download this stuff unless you know what you're doing, the pass for the archives is below.
 
-## Password for Encrypted Files
-If you are sure that you want to explore it, below is a clickable element that will display the password.
-<details>
-<summary>🔒I am sure, I know what I am doing</summary>
+<h3>MALWARE AHEAD! IF YOU  DO NOT  KNOW WHAT THAT IS - LEAVE</h3>
 
-**infected**
+It's just another Malware Database, y'know the drill, don't download this stuff unless you know what you're doing, the pass for the archives is at the bottom.
 
 
-## ERRORS
+# ERRORS
 If you find an error in the archives, like a wrong password or corrupt, feel free to make an Issue in the Issues tab, but read the FAQ first before doing so, thanks!
 
 # FAQ
@@ -18,4 +14,11 @@ If you find an error in the archives, like a wrong password or corrupt, feel fre
    A: Probably because of the splitted zips. Firstly, download all the files in the folder and then open the **.001** file and then extract it with the password. If not that, the archive is broken, make an issue if so. Thanks.
 
 Got anymore questions? Make an issue if so.
+
+## Password for Encrypted Files
+If you are sure that you want to explore it, below is a clickable element that will display the password.
+<details>
+<summary>🔒I am sure, I know what I am doing</summary>
+
+**infected**
 
