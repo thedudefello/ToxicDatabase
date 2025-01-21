@@ -1,0 +1,9 @@
+C:\Users\Clutter\source\repos\version1\version1\bin\Release\version -1.0.exe
+C:\Users\Clutter\source\repos\version1\version1\bin\Release\version -1.0.pdb
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version1.warning.resources
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version1.Properties.Resources.resources
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version1.csproj.GenerateResource.cache
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version1.csproj.CoreCompileInputs.cache
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version -1.0.exe
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version -1.0.pdb
+C:\Users\Clutter\source\repos\version1\version1\obj\Release\version1.csproj.AssemblyReference.cache
