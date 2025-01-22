@@ -1,1 +1,2 @@
-
+A RAT (Remote Access Trojan) is a type of malware that gains access to the users PC via downloading suspicious files or getting phished.
+Once ran, it immediately starts its payloads like keylogging, taking pictures of the desktop or webcam which will be used as blackmail for the attacker, stealing passwords and installing a botnet.
