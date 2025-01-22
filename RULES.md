@@ -1,3 +1,10 @@
+<h1 align="center">
+  <br>
+  <img src=https://cdn-icons-png.flaticon.com/512/10270/10270175.png width="150">
+  <br>
+  ToxicDatabase
+  <br>
+</h1>
 # 📋 Rules for people who want to contribute
 *Note, if you aren't gonna tribute to this, you can ignore this file*
 
