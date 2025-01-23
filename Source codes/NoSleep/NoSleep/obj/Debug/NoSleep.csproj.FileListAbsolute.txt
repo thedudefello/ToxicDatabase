@@ -1,0 +1,15 @@
+C:\Users\Worm\source\repos\NoSleep\NoSleep\bin\Debug\NoSleep.exe
+C:\Users\Worm\source\repos\NoSleep\NoSleep\bin\Debug\NoSleep.pdb
+C:\Users\Worm\source\repos\NoSleep\NoSleep\bin\Debug\Interop.WMPLib.dll
+C:\Users\Worm\source\repos\NoSleep\NoSleep\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\Interop.WMPLib.dll
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.csproj.ResolveComReference.cache
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.NoSleep.resources
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.NoSleep_windows.resources
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.Properties.Resources.resources
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.Rules.resources
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.exe
+C:\Users\Worm\source\repos\NoSleep\NoSleep\obj\Debug\NoSleep.pdb
