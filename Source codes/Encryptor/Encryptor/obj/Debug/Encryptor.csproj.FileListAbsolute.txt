@@ -1,0 +1,9 @@
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\bin\Debug\Encryptor.exe
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\bin\Debug\Encryptor.pdb
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.Encryptor.resources
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.Properties.Resources.resources
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.csproj.GenerateResource.cache
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.csproj.CoreCompileInputs.cache
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.exe
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.pdb
+C:\Users\Clutter\source\repos\Encryptor\Encryptor\obj\Debug\Encryptor.csproj.AssemblyReference.cache

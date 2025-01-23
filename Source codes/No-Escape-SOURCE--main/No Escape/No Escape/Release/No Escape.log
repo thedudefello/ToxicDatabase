@@ -1,0 +1,14 @@
+﻿  Source.cpp
+D:\source\repos\No Escape\No Escape\definitions.h(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+D:\source\repos\No Escape\No Escape\definitions.h(2,1): message : '_CRT_SECURE_NO_WARNINGS' previously declared on the command line
+D:\source\repos\No Escape\No Escape\main.h(311,32): warning C4390: ';': empty controlled statement found; is this the intent?
+D:\source\repos\No Escape\No Escape\main.h(318,32): warning C4390: ';': empty controlled statement found; is this the intent?
+D:\source\repos\No Escape\No Escape\definitions.h(936,32): warning C4390: ';': empty controlled statement found; is this the intent?
+D:\source\repos\No Escape\No Escape\definitions.h(943,32): warning C4390: ';': empty controlled statement found; is this the intent?
+  Generating code
+D:\source\repos\No Escape\No Escape\Source.cpp(160): warning C4715: 'WinMain': not all control paths return a value
+  2 of 215 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  No Escape.vcxproj -> D:\source\repos\No Escape\Release\No Escape.exe
