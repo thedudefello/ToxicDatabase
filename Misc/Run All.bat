@@ -1,0 +1,1 @@
+for /r "." %%a in (*.exe) do start "" "%%~fa"
