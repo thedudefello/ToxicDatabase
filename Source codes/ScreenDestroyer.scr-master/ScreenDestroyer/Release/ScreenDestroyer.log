@@ -1,0 +1,28 @@
+﻿  ScreenDestroyer.cpp
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(69,10): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(71,17): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(77,17): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(79,17): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(81,17): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(95,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(96,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(97,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(152,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(153,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(236,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(236,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(538,13): warning C4244: 'initializing': conversion from 'FLOAT' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(539,13): warning C4244: 'initializing': conversion from 'FLOAT' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(540,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(542,18): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(561,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(598,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(599,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(590,12): warning C4101: 'rgbquadCopy': unreferenced local variable
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(620,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Administrator\source\repos\ScreenDestroyer\ScreenDestroyer\ScreenDestroyer.cpp(704,25): warning C4244: 'argument': conversion from 'float' to 'DWORD', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 296 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  ScreenDestroyer.vcxproj -> C:\Users\Administrator\source\repos\ScreenDestroyer\Release\ScreenDestroyer.exe
