@@ -1,0 +1,8 @@
+C:\Users\Worm\source\repos\wormlogon\wormlogon\bin\Debug\wormlogon.exe
+C:\Users\Worm\source\repos\wormlogon\wormlogon\bin\Debug\wormlogon.pdb
+C:\Users\Worm\source\repos\wormlogon\wormlogon\obj\Debug\wormlogon.logon.resources
+C:\Users\Worm\source\repos\wormlogon\wormlogon\obj\Debug\wormlogon.Properties.Resources.resources
+C:\Users\Worm\source\repos\wormlogon\wormlogon\obj\Debug\wormlogon.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\wormlogon\wormlogon\obj\Debug\wormlogon.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\wormlogon\wormlogon\obj\Debug\wormlogon.exe
+C:\Users\Worm\source\repos\wormlogon\wormlogon\obj\Debug\wormlogon.pdb

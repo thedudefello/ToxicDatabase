@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WormLocker2.0", "WormLocker2.0\WormLocker2.0.csproj", "{9FB5AB1F-EDBF-4B47-AE62-0E6BCA73420A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FB5AB1F-EDBF-4B47-AE62-0E6BCA73420A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB5AB1F-EDBF-4B47-AE62-0E6BCA73420A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB5AB1F-EDBF-4B47-AE62-0E6BCA73420A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB5AB1F-EDBF-4B47-AE62-0E6BCA73420A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DE5DDFB-A889-44A2-B233-E6719CADE442}
+	EndGlobalSection
+EndGlobal

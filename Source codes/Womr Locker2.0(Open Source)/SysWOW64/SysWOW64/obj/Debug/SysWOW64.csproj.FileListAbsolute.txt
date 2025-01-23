@@ -1,0 +1,9 @@
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\SysWOW64.Worm_patch.resources
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\SysWOW64.Properties.Resources.resources
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\SysWOW64.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\SysWOW64.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\bin\Debug\Automatic_converter_rff_to_mp4.exe
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\bin\Debug\Automatic_converter_rff_to_mp4.pdb
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\Automatic_converter_rff_to_mp4.exe
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\Automatic_converter_rff_to_mp4.pdb
+C:\Users\Worm\source\repos\SysWOW64\SysWOW64\obj\Debug\SysWOW64.csprojAssemblyReference.cache
