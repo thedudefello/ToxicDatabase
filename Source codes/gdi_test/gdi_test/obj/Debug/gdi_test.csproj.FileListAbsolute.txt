@@ -1,0 +1,9 @@
+C:\Users\Worm\source\repos\gdi_test\gdi_test\bin\Debug\gdi_test.exe
+C:\Users\Worm\source\repos\gdi_test\gdi_test\bin\Debug\gdi_test.pdb
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.csprojAssemblyReference.cache
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.gdi.resources
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.Properties.Resources.resources
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.exe
+C:\Users\Worm\source\repos\gdi_test\gdi_test\obj\Debug\gdi_test.pdb

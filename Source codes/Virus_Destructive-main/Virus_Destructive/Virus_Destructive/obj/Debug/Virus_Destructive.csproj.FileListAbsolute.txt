@@ -1,0 +1,12 @@
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.Virus.resources
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.Properties.Resources.resources
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\bin\Debug\Virus_Destructive.exe
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\bin\Debug\Virus_Destructive.pdb
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.exe
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.pdb
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.Virus_payload.resources
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.Virus_last.resources
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.Virus_sound.resources
+C:\Users\Worm\source\repos\Virus_Destructive\Virus_Destructive\obj\Debug\Virus_Destructive.virus_last_again.resources
