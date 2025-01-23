@@ -1,0 +1,31 @@
+﻿  コンピューターが暴走する.cpp
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(174,7): warning C4552: "<": результат выражения не используется
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(184,10): warning C4552: "<": результат выражения не используется
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(189,10): warning C4552: "<": результат выражения не используется
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(282,12): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(283,16): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(306,12): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(307,16): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(327,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(346,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(392,14): warning C4244: инициализация: преобразование "int" в "FLOAT", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(446,14): warning C4244: инициализация: преобразование "INT" в "FLOAT", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(502,14): warning C4244: инициализация: преобразование "int" в "FLOAT", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(636,77): warning C4293: >>: отрицательное или слишком большое смещение; поведение не определено
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(636,116): warning C4293: >>: отрицательное или слишком большое смещение; поведение не определено
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(636,184): warning C4554: "|": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(636,162): warning C4244: =: преобразование "unsigned long" в "char", возможна потеря данных
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(692,60): warning C4554: ">>": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(706,54): warning C4293: >>: отрицательное или слишком большое смещение; поведение не определено
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(732,24): warning C4129: Y: неизвестная escape-последовательность
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(732,24): warning C4129: I: неизвестная escape-последовательность
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(732,24): warning C4129: C: неизвестная escape-последовательность
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(732,24): warning C4129: P: неизвестная escape-последовательность
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(738,25): warning C4129: Y: неизвестная escape-последовательность
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(738,25): warning C4129: I: неизвестная escape-последовательность
+C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\コンピューターが暴走する\コンピューターが暴走する.cpp(738,25): warning C4129: C: неизвестная escape-последовательность
+  Создание кода
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 29 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  コンピューターが暴走する.vcxproj -> C:\Users\mrsuperbuddy\source\repos\コンピューターが暴走する\Release\コンピューターが暴走する.exe
