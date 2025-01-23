@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="首次使用 配置文件导出中 请耐心等待"
+      android:textColor="#ff696e9d"
+      android:textSize="15.0sp"
+      />
+  <com.android.tencent.zdevs.bah.CustomProgressBar
+      android:id="@+id/pgsBar"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:layout_marginTop="80.0px"
+      android:max="100"
+      style="?android:attr/progressBarStyleHorizontal"
+      />
+</LinearLayout>
