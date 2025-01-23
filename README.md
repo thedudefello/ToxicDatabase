@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src=https://img.icons8.com/fluency/400/nuclear.png width="150">
+  <img src=https://files.softicons.com/download/application-icons/malware-icons-by-deleket/ico/Radioactive.ico width="150">
   <br>
   ToxicDatabase
   <br>
