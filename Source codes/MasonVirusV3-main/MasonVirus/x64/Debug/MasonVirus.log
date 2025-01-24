@@ -1,0 +1,6 @@
+﻿  MasonVirus.cpp
+C:\Users\n3r-\Desktop\MasonVirus\MasonVirus\MasonVirus.cpp(7,9): warning C4005: 'PATINVERT': macro redefinition
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\wingdi.h(94,9):
+      see previous definition of 'PATINVERT'
+  
+  MasonVirus.vcxproj -> C:\Users\n3r-\Desktop\MasonVirus\x64\Debug\MasonVirus.exe
