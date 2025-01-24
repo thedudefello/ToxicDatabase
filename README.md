@@ -8,7 +8,7 @@
 
 
 > [!CAUTION]
-> **!!! I NEITHER AM I OR THE AUTHORS ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR MACHINE !!!**
+> **I NEITHER AM I OR THE AUTHORS ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR MACHINE**
 
 It's just another Malware Database, y'know the drill, don't download this stuff unless you know what you're doing, the pass for the archives is at the bottom.
 
