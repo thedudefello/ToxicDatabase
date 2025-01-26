@@ -23,6 +23,7 @@ If you find an error in the archives, like a wrong password or corrupt, feel fre
 2. A: Probably because of the splitted zips. Firstly, download all the files in the folder and then open the **.001** file and then extract it with the password. If not that, the archive is broken, make an issue if so. Thanks.
 
 Got anymore questions? Make an issue if so.
+If you wanna suggest malware to add, make a merge or chat in the discussion or issues!
 
 ## Password for Encrypted Files
 If you are sure that you want to explore it, below is a clickable element that will display the password.
