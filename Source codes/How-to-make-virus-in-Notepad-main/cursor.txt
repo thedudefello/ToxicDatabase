@@ -1,0 +1,83 @@
+$source= @"
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Runtime.InteropServices;
+using System.IO;
+using System.Diagnostics;
+using System.Media;
+using System.Reflection;
+using System.Threading;
+
+public static class Win32
+{
+       [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern IntPtr GetDC(IntPtr hWnd);
+
+        [DllImport("User32.dll", SetLastError = true)]
+        public static extern int SetProcessDPIAware();
+        public struct POINT
+        {
+            public int x;
+            public int y;
+        };
+
+        [DllImport("User32.dll", SetLastError = true)]
+        public static extern int GetSystemMetrics(int nIndex);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CURSORINFO
+        {
+            public int cbSize;
+            public int flags;
+            public IntPtr hCursor;
+            public POINT ptScreenPos;
+        }
+
+        [DllImport("user32.dll", EntryPoint = "GetCursorInfo")]
+        public static extern bool GetCursorInfo(out CURSORINFO pci);
+
+        [DllImport("user32.dll", EntryPoint = "DrawIcon")]
+        public static extern bool DrawIcon(IntPtr hDC, int X, int Y, IntPtr hIcon);
+
+        [DllImport("user32.dll")]
+        public static extern int DestroyCursor([In] IntPtr hCursor);
+
+public static void cursor_show()
+{
+  SetProcessDPIAware();
+
+            Random rand = new Random();
+
+            IntPtr hdcDesktop = GetDC(IntPtr.Zero);
+
+            int x = 0;
+            int y = 0;
+
+            int w = GetSystemMetrics(0);
+            int h = GetSystemMetrics(1);
+
+            CURSORINFO curInf = new CURSORINFO();
+            curInf.cbSize = Marshal.SizeOf(typeof(CURSORINFO));
+
+            while (true)
+            {
+                GetCursorInfo(out curInf);
+
+                for (int i = 0; i < (int)(rand.Next(5) + 1); i++)
+                {
+                    DrawIcon(hdcDesktop, rand.Next(w - GetSystemMetrics(13)) - x,
+                        rand.Next(h - GetSystemMetrics(14)) - y, curInf.hCursor);
+                }
+                DestroyCursor(curInf.hCursor);
+                Thread.Sleep(rand.Next(11));
+            }
+}
+}
+"@
+ Add-Type -TypeDefinition $source -Language CSharp
+ [Win32]::cursor_show()

@@ -1,0 +1,181 @@
+$source= @"
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Runtime.InteropServices;
+using System.IO;
+using System.Diagnostics;
+using System.Media;
+using System.Reflection;
+using System.Threading;
+
+public static class Win32
+{
+        [DllImport("Gdi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern bool SetWorldTransform(IntPtr hdc, ref XFORM lpxf);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct XFORM
+        {
+            public float eM11;
+            public float eM12;
+            public float eM21;
+            public float eM22;
+            public float eDx;
+            public float eDy;
+        }
+
+        [DllImport("Gdi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern int SetGraphicsMode(IntPtr hdc, int iMode);
+
+        public const int GM_COMPATIBLE = 1;
+        public const int GM_ADVANCED = 2;
+        public const int GM_LAST = 2;
+
+        [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern IntPtr GetDC(IntPtr hWnd);
+
+        [DllImport("User32.dll", SetLastError = true)]
+        public static extern int SetProcessDPIAware();
+
+        [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+
+        public const int TRANSPARENT = 1;
+        public const int OPAQUE = 2;
+        public const int BKMODE_LAST = 2;
+        public struct POINT
+        {
+            public int x;
+            public int y;
+        };
+
+        [DllImport("User32.dll", SetLastError = true)]
+        public static extern int GetSystemMetrics(int nIndex);
+
+        [DllImport("Gdi32.dll", SetLastError = true)]
+        public static extern IntPtr CreateCompatibleDC(IntPtr hdc);
+
+        [DllImport("Gdi32.dll", SetLastError = true)]
+        public static extern IntPtr CreateCompatibleBitmap(IntPtr hdc, int w, int h);
+
+        [DllImport("msimg32.dll", EntryPoint = "AlphaBlend")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool AlphaBlend(System.IntPtr hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, System.IntPtr hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct BLENDFUNCTION
+        {
+            /// BYTE->char
+            public byte BlendOp;
+
+            /// BYTE->char
+            public byte BlendFlags;
+
+            /// BYTE->char
+            public byte SourceConstantAlpha;
+
+            /// BYTE->char
+            public byte AlphaFormat;
+        }
+        public const int AC_SRC_OVER = 0;
+
+        [DllImport("gdi32.dll", EntryPoint = "BitBlt", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool BitBlt([In] IntPtr hdc, int nXDest, int nYDest, int nWidth, int nHeight, [In] IntPtr hdcSrc, int nXSrc, int nYSrc, int dwRop);
+        public static int
+            SRCCOPY = 0x00CC0020,
+            SRCPAINT = 0x00EE0086,
+            SRCAND = 0x008800C6,
+            SRCINVERT = 0x00660046,
+            SRCERASE = 0x00440328,
+            NOTSRCCOPY = 0x00330008,
+            NOTSRCERASE = 0x001100A6,
+            MERGECOPY = 0x00C000CA,
+            MERGEPAINT = 0x00BB0226,
+            PATCOPY = 0x00F00021,
+            PATPAINT = 0x00FB0A09,
+            PATINVERT = 0x005A0049,
+            DSTINVERT = 0x00550009,
+            BLACKNESS = 0x00000042,
+            WHITENESS = 0x00FF0062,
+            CAPTUREBLT = 0x40000000;
+        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool DeleteObject([In] IntPtr hObject);
+        [DllImport("gdi32.dll", EntryPoint = "SelectObject")]
+        public static extern IntPtr SelectObject([In] IntPtr hdc, [In] IntPtr hgdiobj);
+
+        const float PI = 3.1415f;
+
+        public static int RotateDC(IntPtr hdc, int Angle, POINT ptCenter)
+        {
+            int nGraphicsMode = SetGraphicsMode(hdc, GM_ADVANCED);
+            XFORM xform;
+            if (Angle != 0)
+            {
+                float fangle = (float)Angle / 180.0f * PI;
+                xform.eM11 = (float)Math.Cos((double)fangle);
+                xform.eM12 = (float)Math.Sin((double)fangle);
+                xform.eM21 = (float)-Math.Sin((double)fangle);
+                xform.eM22 = (float)Math.Cos((double)fangle);
+                xform.eDx = (float)(ptCenter.x - (float)Math.Cos((double)fangle) * ptCenter.x + (float)Math.Sin((double)fangle) * ptCenter.y);
+                xform.eDy = (float)(ptCenter.y - (float)Math.Cos((double)fangle) * ptCenter.y - (float)Math.Sin((double)fangle) * ptCenter.x);
+                SetWorldTransform(hdc, ref xform);
+            }
+            return nGraphicsMode;
+        }
+
+public static void rotate()
+{
+SetProcessDPIAware();
+while(true)
+            {
+               IntPtr hdcScreen;
+                hdcScreen = GetDC(IntPtr.Zero);
+
+                int t = 0;
+
+                int cx = GetSystemMetrics(0);
+                int cy = GetSystemMetrics(1);
+
+                IntPtr hcdc = CreateCompatibleDC(hdcScreen);
+                IntPtr hBitmap = CreateCompatibleBitmap(hdcScreen, cx, cy);
+
+                SelectObject(hcdc, hBitmap);
+                BitBlt(hcdc, 0, 0, cx, cy, hdcScreen, 0, 0, SRCCOPY);
+
+                POINT p;
+                p.x = (cx / 2);
+                p.y = (cy / 2);
+
+                BLENDFUNCTION blf;
+                blf.BlendOp = AC_SRC_OVER;
+                blf.BlendFlags = 0;
+                blf.SourceConstantAlpha = 128;
+                blf.AlphaFormat = 0;
+
+                if (t % 2 == 0)
+                {
+                    RotateDC(hdcScreen, 1, p);
+                }
+                else
+                {
+                    RotateDC(hdcScreen, -1, p);
+                }
+
+                AlphaBlend(hdcScreen, 0, 0, cx, cy, hcdc, 0, 0, cx, cy, blf);
+
+                DeleteObject(hcdc);
+                DeleteObject(hBitmap);
+                Thread.Sleep(1);
+            }
+}
+}
+"@
+ Add-Type -TypeDefinition $source -Language CSharp
+ [Win32]::rotate()
