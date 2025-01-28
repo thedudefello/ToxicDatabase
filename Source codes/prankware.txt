@@ -1,0 +1,843 @@
+#include <Windows.h>
+
+#define STATUS_SUCCESS 0
+#define NT_SUCCESS(Status) ((NTSTATUS)(Status) >= 0)
+
+typedef struct _SHITEMID {
+	USHORT cb;
+	BYTE abID[1];
+} 	SHITEMID;
+
+typedef struct _ITEMIDLIST {
+	SHITEMID mkid;
+}ITEMIDLIST;
+
+typedef const ITEMIDLIST* LPCITEMIDLIST;
+DEFINE_GUID(IID_IShellFolder, 0x000214E6L, 0, 0, 0xC0, 0, 0, 0, 0, 0, 0, 0x46);
+#define PIDLIST_RELATIVE         LPITEMIDLIST
+#define PCUIDLIST_RELATIVE       LPCITEMIDLIST
+#define PITEMID_CHILD            LPITEMIDLIST
+#define PCUITEMID_CHILD_ARRAY    LPCITEMIDLIST *
+#define PCUITEMID_CHILD          LPCITEMIDLIST
+#define PIDLIST_ABSOLUTE         LPITEMIDLIST
+#define PCIDLIST_ABSOLUTE        LPCITEMIDLIST
+#define SFGAO_FILESYSTEM        0x40000000L
+#define CSIDL_BITBUCKET         0x000a
+
+typedef DWORD SHCONTF;
+typedef ULONG SFGAOF;
+typedef DWORD SHGDNF;
+
+typedef SHITEMID* LPSHITEMID;
+typedef const SHITEMID* LPCSHITEMID;
+typedef ITEMIDLIST* LPITEMIDLIST;
+
+enum _SHGDNF
+{
+	SHGDN_NORMAL = 0,
+	SHGDN_INFOLDER = 0x1,
+	SHGDN_FOREDITING = 0x1000,
+	SHGDN_FORADDRESSBAR = 0x4000,
+	SHGDN_FORPARSING = 0x8000
+};
+typedef DWORD SHGDNF;
+
+enum _SHCONTF
+{
+	SHCONTF_CHECKING_FOR_CHILDREN = 0x10,
+	SHCONTF_FOLDERS = 0x20,
+	SHCONTF_NONFOLDERS = 0x40,
+	SHCONTF_INCLUDEHIDDEN = 0x80,
+	SHCONTF_INIT_ON_FIRST_NEXT = 0x100,
+	SHCONTF_NETPRINTERSRCH = 0x200,
+	SHCONTF_SHAREABLE = 0x400,
+	SHCONTF_STORAGE = 0x800,
+	SHCONTF_NAVIGATION_ENUM = 0x1000,
+	SHCONTF_FASTITEMS = 0x2000,
+	SHCONTF_FLATLIST = 0x4000,
+	SHCONTF_ENABLE_ASYNC = 0x8000,
+	SHCONTF_INCLUDESUPERHIDDEN = 0x10000
+};
+typedef DWORD SHCONTF;
+
+typedef enum _FILE_INFORMATION_CLASS {
+	FileDirectoryInformation = 1,
+	FileFullDirectoryInformation = 2,
+	FileBothDirectoryInformation = 3,
+	FileBasicInformation = 4,
+	FileStandardInformation = 5,
+	FileInternalInformation = 6,
+	FileEaInformation = 7,
+	FileAccessInformation = 8,
+	FileNameInformation = 9,
+	FileRenameInformation = 10,
+	FileLinkInformation = 11,
+	FileNamesInformation = 12,
+	FileDispositionInformation = 13,
+	FilePositionInformation = 14,
+	FileFullEaInformation = 15,
+	FileModeInformation = 16,
+	FileAlignmentInformation = 17,
+	FileAllInformation = 18,
+	FileAllocationInformation = 19,
+	FileEndOfFileInformation = 20,
+	FileAlternateNameInformation = 21,
+	FileStreamInformation = 22,
+	FilePipeInformation = 23,
+	FilePipeLocalInformation = 24,
+	FilePipeRemoteInformation = 25,
+	FileMailslotQueryInformation = 26,
+	FileMailslotSetInformation = 27,
+	FileCompressionInformation = 28,
+	FileObjectIdInformation = 29,
+	FileCompletionInformation = 30,
+	FileMoveClusterInformation = 31,
+	FileQuotaInformation = 32,
+	FileReparsePointInformation = 33,
+	FileNetworkOpenInformation = 34,
+	FileAttributeTagInformation = 35,
+	FileTrackingInformation = 36,
+	FileIdBothDirectoryInformation = 37,
+	FileIdFullDirectoryInformation = 38,
+	FileValidDataLengthInformation = 39,
+	FileShortNameInformation = 40,
+	FileIoCompletionNotificationInformation = 41,
+	FileIoStatusBlockRangeInformation = 42,
+	FileIoPriorityHintInformation = 43,
+	FileSfioReserveInformation = 44,
+	FileSfioVolumeInformation = 45,
+	FileHardLinkInformation = 46,
+	FileProcessIdsUsingFileInformation = 47,
+	FileNormalizedNameInformation = 48,
+	FileNetworkPhysicalNameInformation = 49,
+	FileIdGlobalTxDirectoryInformation = 50,
+	FileIsRemoteDeviceInformation = 51,
+	FileUnusedInformation = 52,
+	FileNumaNodeInformation = 53,
+	FileStandardLinkInformation = 54,
+	FileRemoteProtocolInformation = 55,
+	FileRenameInformationBypassAccessCheck = 56,
+	FileLinkInformationBypassAccessCheck = 57,
+	FileVolumeNameInformation = 58,
+	FileIdInformation = 59,
+	FileIdExtdDirectoryInformation = 60,
+	FileReplaceCompletionInformation = 61,
+	FileHardLinkFullIdInformation = 62,
+	FileIdExtdBothDirectoryInformation = 63,
+	FileDispositionInformationEx = 64,
+	FileRenameInformationEx = 65,
+	FileRenameInformationExBypassAccessCheck = 66,
+	FileDesiredStorageClassInformation = 67,
+	FileStatInformation = 68,
+	FileMemoryPartitionInformation = 69,
+	FileStatLxInformation = 70,
+	FileCaseSensitiveInformation = 71,
+	FileLinkInformationEx = 72,
+	FileLinkInformationExBypassAccessCheck = 73,
+	FileStorageReserveIdInformation = 74,
+	FileCaseSensitiveInformationForceAccessCheck = 75,
+	FileKnownFolderInformation = 76,
+	FileStatBasicInformation = 77,
+	FileId64ExtdDirectoryInformation = 78,
+	FileId64ExtdBothDirectoryInformation = 79,
+	FileIdAllExtdDirectoryInformation = 80,
+	FileIdAllExtdBothDirectoryInformation = 81,
+	FileStreamReservationInformation,
+	FileMupProviderInfo,
+	FileMaximumInformation
+} FILE_INFORMATION_CLASS, * PFILE_INFORMATION_CLASS;
+
+typedef struct _IO_STATUS_BLOCK {
+	union {
+		NTSTATUS Status;
+		PVOID    Pointer;
+	};
+	ULONG_PTR Information;
+} IO_STATUS_BLOCK, * PIO_STATUS_BLOCK;
+
+typedef struct _LSA_UNICODE_STRING {
+	USHORT Length;
+	USHORT MaximumLength;
+	PWSTR  Buffer;
+} LSA_UNICODE_STRING, * PLSA_UNICODE_STRING, UNICODE_STRING, * PUNICODE_STRING;
+
+typedef struct _OBJECT_ATTRIBUTES {
+	ULONG           Length;
+	HANDLE          RootDirectory;
+	PUNICODE_STRING ObjectName;
+	ULONG           Attributes;
+	PVOID           SecurityDescriptor;
+	PVOID           SecurityQualityOfService;
+} OBJECT_ATTRIBUTES, * POBJECT_ATTRIBUTES;
+
+typedef struct _LDR_MODULE {
+	LIST_ENTRY              InLoadOrderModuleList;
+	LIST_ENTRY              InMemoryOrderModuleList;
+	LIST_ENTRY              InInitializationOrderModuleList;
+	PVOID                   BaseAddress;
+	PVOID                   EntryPoint;
+	ULONG                   SizeOfImage;
+	UNICODE_STRING          FullDllName;
+	UNICODE_STRING          BaseDllName;
+	ULONG                   Flags;
+	SHORT                   LoadCount;
+	SHORT                   TlsIndex;
+	LIST_ENTRY              HashTableEntry;
+	ULONG                   TimeDateStamp;
+} LDR_MODULE, * PLDR_MODULE;
+
+typedef struct _PEB_LDR_DATA {
+	ULONG                   Length;
+	ULONG                   Initialized;
+	PVOID                   SsHandle;
+	LIST_ENTRY              InLoadOrderModuleList;
+	LIST_ENTRY              InMemoryOrderModuleList;
+	LIST_ENTRY              InInitializationOrderModuleList;
+} PEB_LDR_DATA, * PPEB_LDR_DATA;
+
+typedef struct _CURDIR {
+	UNICODE_STRING DosPath;
+	PVOID Handle;
+}CURDIR, * PCURDIR;
+
+typedef struct _STRING {
+	USHORT Length;
+	USHORT MaximumLength;
+	PCHAR  Buffer;
+} ANSI_STRING, * PANSI_STRING;
+
+typedef struct _RTL_DRIVE_LETTER_CURDIR {
+	WORD Flags;
+	WORD Length;
+	ULONG TimeStamp;
+	ANSI_STRING DosPath;
+} RTL_DRIVE_LETTER_CURDIR, * PRTL_DRIVE_LETTER_CURDIR;
+
+typedef struct _RTL_USER_PROCESS_PARAMETERS {
+	ULONG MaximumLength;
+	ULONG Length;
+	ULONG Flags;
+	ULONG DebugFlags;
+	PVOID ConsoleHandle;
+	ULONG ConsoleFlags;
+	PVOID StandardInput;
+	PVOID StandardOutput;
+	PVOID StandardError;
+	CURDIR CurrentDirectory;
+	UNICODE_STRING DllPath;
+	UNICODE_STRING ImagePathName;
+	UNICODE_STRING CommandLine;
+	PVOID Environment;
+	ULONG StartingX;
+	ULONG StartingY;
+	ULONG CountX;
+	ULONG CountY;
+	ULONG CountCharsX;
+	ULONG CountCharsY;
+	ULONG FillAttribute;
+	ULONG WindowFlags;
+	ULONG ShowWindowFlags;
+	UNICODE_STRING WindowTitle;
+	UNICODE_STRING DesktopInfo;
+	UNICODE_STRING ShellInfo;
+	UNICODE_STRING RuntimeData;
+	RTL_DRIVE_LETTER_CURDIR CurrentDirectores[32];
+	ULONG EnvironmentSize;
+}RTL_USER_PROCESS_PARAMETERS, * PRTL_USER_PROCESS_PARAMETERS;
+
+typedef struct _PEB {
+	BOOLEAN							InheritedAddressSpace;
+	BOOLEAN							ReadImageFileExecOptions;
+	BOOLEAN							BeingDebugged;
+	BOOLEAN							Spare;
+	HANDLE							Mutant;
+	PVOID							ImageBase;
+	PPEB_LDR_DATA					        LoaderData;
+	PRTL_USER_PROCESS_PARAMETERS	                        ProcessParameters;
+	PVOID							SubSystemData;
+	PVOID							ProcessHeap;
+	PVOID							FastPebLock;
+	PVOID							FastPebLockRoutine;
+	PVOID							FastPebUnlockRoutine;
+	ULONG							EnvironmentUpdateCount;
+	PVOID*							KernelCallbackTable;
+	PVOID							EventLogSection;
+	PVOID							EventLog;
+	PVOID							FreeList;
+	ULONG							TlsExpansionCounter;
+	PVOID							TlsBitmap;
+	ULONG							TlsBitmapBits[0x2];
+	PVOID							ReadOnlySharedMemoryBase;
+	PVOID							ReadOnlySharedMemoryHeap;
+	PVOID*							ReadOnlyStaticServerData;
+	PVOID							AnsiCodePageData;
+	PVOID							OemCodePageData;
+	PVOID							UnicodeCaseTableData;
+	ULONG							NumberOfProcessors;
+	ULONG							NtGlobalFlag;
+	BYTE							Spare2[0x4];
+	LARGE_INTEGER					        CriticalSectionTimeout;
+	ULONG							HeapSegmentReserve;
+	ULONG							HeapSegmentCommit;
+	ULONG							HeapDeCommitTotalFreeThreshold;
+	ULONG							HeapDeCommitFreeBlockThreshold;
+	ULONG							NumberOfHeaps;
+	ULONG							MaximumNumberOfHeaps;
+	PVOID**							ProcessHeaps;
+	PVOID							GdiSharedHandleTable;
+	PVOID							ProcessStarterHelper;
+	PVOID							GdiDCAttributeList;
+	PVOID							LoaderLock;
+	ULONG							OSMajorVersion;
+	ULONG							OSMinorVersion;
+	ULONG							OSBuildNumber;
+	ULONG							OSPlatformId;
+	ULONG							ImageSubSystem;
+	ULONG							ImageSubSystemMajorVersion;
+	ULONG							ImageSubSystemMinorVersion;
+	ULONG							GdiHandleBuffer[0x22];
+	ULONG							PostProcessInitRoutine;
+	ULONG							TlsExpansionBitmap;
+	BYTE							TlsExpansionBitmapBits[0x80];
+	ULONG							SessionId;
+} PEB, * PPEB;
+
+typedef struct _STRRET{
+	UINT uType;
+	union
+	{
+		LPWSTR pOleStr;
+		UINT uOffset;
+		CHAR cStr[260];
+	} 	DUMMYUNIONNAME;
+} 	STRRET;
+
+MIDL_INTERFACE("000214F2-0000-0000-C000-000000000046")
+IEnumIDList : public IUnknown
+{
+public:
+	virtual HRESULT STDMETHODCALLTYPE Next(ULONG, PITEMID_CHILD*, ULONG *) = 0;
+	virtual HRESULT STDMETHODCALLTYPE Skip(ULONG) = 0;
+	virtual HRESULT STDMETHODCALLTYPE Reset(void) = 0;
+	virtual HRESULT STDMETHODCALLTYPE Clone(IEnumIDList**) = 0;
+};
+
+typedef IEnumIDList* LPENUMIDLIST;
+
+MIDL_INTERFACE("000214E6-0000-0000-C000-000000000046")
+IShellFolder : public IUnknown
+{
+public:
+	virtual HRESULT STDMETHODCALLTYPE ParseDisplayName(HWND, IBindCtx*, LPWSTR, ULONG*, PIDLIST_RELATIVE*, ULONG*) = 0;
+	virtual HRESULT STDMETHODCALLTYPE EnumObjects(HWND, SHCONTF, IEnumIDList**) = 0;
+	virtual HRESULT STDMETHODCALLTYPE BindToObject(PCUIDLIST_RELATIVE, IBindCtx*, REFIID, void**) = 0;
+	virtual HRESULT STDMETHODCALLTYPE BindToStorage(PCUIDLIST_RELATIVE, IBindCtx*, REFIID, void**) = 0;
+	virtual HRESULT STDMETHODCALLTYPE CompareIDs(LPARAM, PCUIDLIST_RELATIVE, PCUIDLIST_RELATIVE) = 0;
+	virtual HRESULT STDMETHODCALLTYPE CreateViewObject(HWND, REFIID, void**) = 0;
+	virtual HRESULT STDMETHODCALLTYPE GetAttributesOf(UINT, PCUITEMID_CHILD_ARRAY, SFGAOF*) = 0;
+	virtual HRESULT STDMETHODCALLTYPE GetUIObjectOf(HWND, UINT, PCUITEMID_CHILD_ARRAY, REFIID, UINT*, void**) = 0;
+	virtual HRESULT STDMETHODCALLTYPE GetDisplayNameOf(PCUITEMID_CHILD, SHGDNF, STRRET*) = 0;
+	virtual HRESULT STDMETHODCALLTYPE SetNameOf(HWND, PCUITEMID_CHILD, LPCWSTR, SHGDNF, PITEMID_CHILD*) = 0;
+};
+
+typedef IShellFolder* LPSHELLFOLDER;
+
+typedef NTSTATUS(NTAPI* NTOPENPROCESSTOKENEX)(HANDLE, ACCESS_MASK, ULONG, PHANDLE);
+typedef NTSTATUS(NTAPI* NTQUERYINFORMATIONTOKEN)(HANDLE, TOKEN_INFORMATION_CLASS, PVOID, ULONG, PULONG);
+typedef NTSTATUS(NTAPI* NTCLOSE)(HANDLE);
+typedef NTSTATUS(NTAPI* NTOPENFILE)(PHANDLE, ACCESS_MASK, POBJECT_ATTRIBUTES, PIO_STATUS_BLOCK, ULONG, ULONG);
+typedef NTSTATUS(NTAPI* NTSETINFORMATIONFILE)(HANDLE, PIO_STATUS_BLOCK, PVOID, ULONG, FILE_INFORMATION_CLASS);
+typedef NTSTATUS(NTAPI* LDRLOADDLL)(PWCHAR, ULONG, PUNICODE_STRING, PHANDLE);
+typedef NTSTATUS(NTAPI* RTLCONVERTSIDTOUNICODESTRING)(PUNICODE_STRING, PVOID, BOOLEAN);
+typedef PVOID(NTAPI* RTLALLOCATEHEAP)(PVOID, ULONG, SIZE_T);
+typedef BOOL(NTAPI* RTLFREEHEAP)(PVOID, ULONG, PVOID);
+
+NTOPENPROCESSTOKENEX NtOpenProcessTokenEx = NULL;
+NTQUERYINFORMATIONTOKEN NtQueryInformationToken = NULL;
+NTCLOSE NtClose = NULL;
+NTSETINFORMATIONFILE NtSetInformationFile = NULL;
+NTOPENFILE NtOpenFile = NULL;
+LDRLOADDLL LdrLoadDll = NULL;
+RTLCONVERTSIDTOUNICODESTRING RtlConvertSidToUnicodeString = NULL;
+RTLALLOCATEHEAP RtlAllocateHeap = NULL;
+RTLFREEHEAP RtlFreeHeap = NULL;
+
+typedef HRESULT(WINAPI* STORAGE_SHGETDESKTOPFOLDERWORKER)(LPSHELLFOLDER*);
+typedef HRESULT(WINAPI* SHGETFOLDERLOCATION)(HWND, INT, HANDLE, DWORD, PIDLIST_ABSOLUTE*);
+
+STORAGE_SHGETDESKTOPFOLDERWORKER STORAGE_SHGetDesktopFolderWorker = NULL;
+SHGETFOLDERLOCATION SHGetFolderLocation;
+
+SIZE_T CharStringToWCharString(_Inout_ PWCHAR Destination, _In_ PCHAR Source, SIZE_T _In_ MaximumAllowed)
+{
+	INT Length = (INT)MaximumAllowed;
+
+	while (--Length >= 0)
+	{
+		if (!(*Destination++ = *Source++))
+			return MaximumAllowed - Length - 1;
+	}
+
+	return MaximumAllowed - Length;
+}
+
+SIZE_T StringLengthW(_In_ LPCWSTR String)
+{
+	LPCWSTR String2;
+
+	for (String2 = String; *String2; ++String2);
+
+	return (String2 - String);
+}
+
+SIZE_T StringLengthA(_In_ LPCSTR String)
+{
+	LPCSTR String2;
+
+	for (String2 = String; *String2; ++String2);
+
+	return (String2 - String);
+}
+
+PWCHAR StringCopyW(_Inout_ PWCHAR String1, _In_ LPCWSTR String2)
+{
+	PWCHAR p = String1;
+
+	while ((*p++ = *String2++) != 0);
+
+	return String1;
+}
+
+PWCHAR StringConcatW(_Inout_ PWCHAR String, _In_ LPCWSTR String2)
+{
+	StringCopyW(&String[StringLengthW(String)], String2);
+
+	return String;
+}
+
+INT StringCompareA(_In_ LPCSTR String1, _In_ LPCSTR String2)
+{
+	for (; *String1 == *String2; String1++, String2++)
+	{
+		if (*String1 == '\0')
+			return 0;
+	}
+
+	return ((*(LPCSTR)String1 < *(LPCSTR)String2) ? -1 : +1);
+}
+
+INT StringCompareW(_In_ LPCWSTR String1, _In_ LPCWSTR String2)
+{
+	for (; *String1 == *String2; String1++, String2++)
+	{
+		if (*String1 == '\0')
+			return 0;
+	}
+
+	return ((*(LPCWSTR)String1 < *(LPCWSTR)String2) ? -1 : +1);
+}
+
+PWCHAR CaplockStringW(_In_ PWCHAR Ptr)
+{
+	PWCHAR String = Ptr;
+
+	while (*String != '\0')
+	{
+		if (*String >= 'a' && *String <= 'z')
+			*String = *String - ('a' - 'A');
+
+		String++;
+	}
+
+	return Ptr;
+}
+
+PPEB GetPeb(VOID)
+{
+	return (PPEB)__readgsqword(0x60);
+}
+
+HMODULE GetInMemoryLibraryHandle(_In_ LPCWSTR lpModuleName)
+{
+	PPEB Peb = GetPeb();
+	PLDR_MODULE Module = NULL;
+
+	PLIST_ENTRY Head = &Peb->LoaderData->InMemoryOrderModuleList;
+	PLIST_ENTRY Next = Head->Flink;
+	Module = (PLDR_MODULE)((PBYTE)Next - 16);
+
+	while (Next != Head)
+	{
+		Module = (PLDR_MODULE)((PBYTE)Next - 16);
+		if (Module->BaseDllName.Buffer != NULL)
+		{
+			WCHAR InitialModuleName[256] = { 0 };
+			WCHAR IdentifiedModuleName[256] = { 0 };
+
+			if (StringCopyW(InitialModuleName, (PWCHAR)lpModuleName) == NULL)
+				return NULL;
+
+			if (StringCopyW(IdentifiedModuleName, Module->BaseDllName.Buffer) == NULL)
+				return NULL;
+
+			PWCHAR ComparisonObject1 = CaplockStringW(InitialModuleName);
+			PWCHAR ComparisonObject2 = CaplockStringW(IdentifiedModuleName);
+
+			if (StringCompareW(ComparisonObject1, ComparisonObject2) == 0)
+				return (HMODULE)Module->BaseAddress;
+		}
+
+		Next = Next->Flink;
+	}
+
+	return NULL;
+}
+
+BOOL RtlLoadPeHeaders(_Inout_ PIMAGE_DOS_HEADER* Dos, _Inout_ PIMAGE_NT_HEADERS* Nt, _Inout_ PIMAGE_FILE_HEADER* File, _Inout_ PIMAGE_OPTIONAL_HEADER* Optional, _Inout_ PBYTE* ImageBase)
+{
+	*Dos = (PIMAGE_DOS_HEADER)*ImageBase;
+	if ((*Dos)->e_magic != IMAGE_DOS_SIGNATURE)
+		return FALSE;
+
+	*Nt = (PIMAGE_NT_HEADERS)((PBYTE)*Dos + (*Dos)->e_lfanew);
+	if ((*Nt)->Signature != IMAGE_NT_SIGNATURE)
+		return FALSE;
+
+	*File = (PIMAGE_FILE_HEADER)(*ImageBase + (*Dos)->e_lfanew + sizeof(DWORD));
+	*Optional = (PIMAGE_OPTIONAL_HEADER)((PBYTE)*File + sizeof(IMAGE_FILE_HEADER));
+
+	return TRUE;
+}
+
+DWORD64 __stdcall GetProcAddressW(_In_ DWORD64 ModuleBase, _In_ LPCWSTR lpProcName)
+{
+	PBYTE pFunctionName = NULL;
+	PIMAGE_DOS_HEADER Dos = NULL;
+	PIMAGE_NT_HEADERS Nt = NULL;
+	PIMAGE_FILE_HEADER File = NULL;
+	PIMAGE_OPTIONAL_HEADER Optional = NULL;
+	DWORD64 FunctionAddress = ERROR_SUCCESS;
+	ANSI_STRING ForwardFunctionString = { 0 };
+
+	RtlLoadPeHeaders(&Dos, &Nt, &File, &Optional, (PBYTE*)&ModuleBase);
+
+	IMAGE_EXPORT_DIRECTORY* ExportTable = (PIMAGE_EXPORT_DIRECTORY)(ModuleBase + Optional->DataDirectory[0].VirtualAddress);
+	PDWORD FunctionNameAddressArray = (PDWORD)((LPBYTE)ModuleBase + ExportTable->AddressOfNames);
+	PDWORD FunctionAddressArray = (PDWORD)((LPBYTE)ModuleBase + ExportTable->AddressOfFunctions);
+	PWORD FunctionOrdinalAddressArray = (PWORD)((LPBYTE)ModuleBase + ExportTable->AddressOfNameOrdinals);
+
+	for (DWORD dwX = 0; dwX < ExportTable->NumberOfNames; dwX++)
+	{
+		WCHAR wFunctionName[256] = { 0 };
+		pFunctionName = FunctionNameAddressArray[dwX] + (PBYTE)ModuleBase;
+
+		if (CharStringToWCharString(wFunctionName, (PCHAR)pFunctionName, 256) == 0)
+			break;
+
+		if (StringCompareW(wFunctionName, lpProcName) == 0)
+			return ((DWORD64)ModuleBase + FunctionAddressArray[FunctionOrdinalAddressArray[dwX]]);
+	}
+
+	return 0;
+}
+
+VOID RtlInitUnicodeString(_Inout_ PUNICODE_STRING DestinationString, _In_ PCWSTR SourceString)
+{
+	SIZE_T DestSize;
+
+	if (SourceString)
+	{
+		DestSize = StringLengthW(SourceString) * sizeof(WCHAR);
+		DestinationString->Length = (USHORT)DestSize;
+		DestinationString->MaximumLength = (USHORT)DestSize + sizeof(WCHAR);
+	}
+	else
+	{
+		DestinationString->Length = 0;
+		DestinationString->MaximumLength = 0;
+	}
+
+	DestinationString->Buffer = (PWCHAR)SourceString;
+}
+
+BOOL LoadNtFunctionality(VOID)
+{
+	HMODULE hHandle = NULL;
+	BOOL bFlag = FALSE;
+
+	hHandle = GetInMemoryLibraryHandle(L"ntdll.dll");
+	if (hHandle == NULL)
+		goto EXIT_ROUTINE;
+
+	NtOpenProcessTokenEx = (NTOPENPROCESSTOKENEX)GetProcAddressW((DWORD64)hHandle, L"NtOpenProcessTokenEx");
+	NtQueryInformationToken = (NTQUERYINFORMATIONTOKEN)GetProcAddressW((DWORD64)hHandle, L"NtQueryInformationToken");
+	NtClose = (NTCLOSE)GetProcAddressW((DWORD64)hHandle, L"NtClose");
+	NtSetInformationFile = (NTSETINFORMATIONFILE)GetProcAddressW((DWORD64)hHandle, L"NtSetInformationFile");
+	NtOpenFile = (NTOPENFILE)GetProcAddressW((DWORD64)hHandle, L"NtOpenFile");
+	LdrLoadDll = (LDRLOADDLL)GetProcAddressW((DWORD64)hHandle, L"LdrLoadDll");
+	RtlConvertSidToUnicodeString = (RTLCONVERTSIDTOUNICODESTRING)GetProcAddressW((DWORD64)hHandle, L"RtlConvertSidToUnicodeString");
+	RtlAllocateHeap = (RTLALLOCATEHEAP)GetProcAddressW((DWORD64)hHandle, L"RtlAllocateHeap");
+	RtlFreeHeap = (RTLFREEHEAP)GetProcAddressW((DWORD64)hHandle, L"RtlFreeHeap");
+
+	if (!NtOpenProcessTokenEx || !NtQueryInformationToken || !NtClose || !NtSetInformationFile || !NtOpenFile)
+		goto EXIT_ROUTINE;
+		
+	if(!LdrLoadDll || !RtlConvertSidToUnicodeString || !RtlAllocateHeap || !RtlFreeHeap)
+		goto EXIT_ROUTINE;
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	return bFlag;
+}
+
+BOOL GetUserSecurityId(_Inout_ PUNICODE_STRING Sid)
+{
+	HANDLE hHandle = NULL;
+	DWORD dwTokenLength = ERROR_SUCCESS;
+	PTOKEN_USER User = NULL;
+	BOOL bFlag = FALSE;
+	NTSTATUS Status = STATUS_SUCCESS;
+
+	Status = NtOpenProcessTokenEx(((HANDLE)-1), TOKEN_QUERY, 0, &hHandle);
+	if (!NT_SUCCESS(Status))
+		goto EXIT_ROUTINE;
+
+	Status = NtQueryInformationToken(hHandle, TokenUser, NULL, 0, &dwTokenLength);
+	if(Status != 0xC0000023)
+		goto EXIT_ROUTINE;
+
+	User = (PTOKEN_USER)RtlAllocateHeap(GetPeb()->ProcessHeap, HEAP_ZERO_MEMORY, dwTokenLength);
+	if (User == NULL)
+		goto EXIT_ROUTINE;
+
+	Status = NtQueryInformationToken(hHandle, TokenUser, User, dwTokenLength, &dwTokenLength);
+	if (!NT_SUCCESS(Status))
+		goto EXIT_ROUTINE;
+
+	Status = RtlConvertSidToUnicodeString(Sid, User->User.Sid, TRUE);
+	if (!NT_SUCCESS(Status))
+		goto EXIT_ROUTINE;
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	if (hHandle)
+		NtClose(hHandle);
+
+	if (User)
+		RtlFreeHeap(GetPeb()->ProcessHeap, HEAP_ZERO_MEMORY, User);
+
+	return bFlag;
+}
+
+BOOL LoadWindowsStorageFunctionality(VOID)
+{
+	NTSTATUS Status = STATUS_SUCCESS;
+	HANDLE WindowsStorageHandle = NULL;
+	UNICODE_STRING WindowsStorage = { 0 };
+	BOOL bFlag = FALSE;
+
+	RtlInitUnicodeString(&WindowsStorage, L"windows.storage.dll");
+
+	Status = LdrLoadDll(NULL, 0, &WindowsStorage, &WindowsStorageHandle);
+	if (!NT_SUCCESS(Status))
+		goto EXIT_ROUTINE;
+
+	STORAGE_SHGetDesktopFolderWorker = (STORAGE_SHGETDESKTOPFOLDERWORKER)GetProcAddressW((DWORD64)WindowsStorageHandle, L"STORAGE_SHGetDesktopFolderWorker");
+	SHGetFolderLocation = (SHGETFOLDERLOCATION)GetProcAddressW((DWORD64)WindowsStorageHandle, L"SHGetFolderLocation");
+
+	if (!STORAGE_SHGetDesktopFolderWorker || !SHGetFolderLocation)
+		goto EXIT_ROUTINE;
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	return bFlag;
+}
+
+BOOL OleBindObjectToParent(PCIDLIST_ABSOLUTE pIdl, REFIID Riid, PVOID* Pointer, PCUITEMID_CHILD* IdlLast)
+{
+	LPSHELLFOLDER DesktopObject = NULL;
+	HRESULT Result;
+	BOOL bFlag = FALSE;
+
+	Result = STORAGE_SHGetDesktopFolderWorker(&DesktopObject);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	Result = DesktopObject->QueryInterface(Riid, Pointer);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	if(DesktopObject)
+		DesktopObject->Release();
+
+	if (pIdl)
+	{
+		LPCITEMIDLIST Last = pIdl;
+		for (WORD Length = 0; pIdl->mkid.cb;)
+		{
+			Last = pIdl;
+
+			Length = pIdl->mkid.cb;
+			if (Length)
+				pIdl = (LPCITEMIDLIST)(((PBYTE)pIdl) + Length);
+		}
+
+		*IdlLast = Last;
+	}
+
+	return bFlag;
+}
+
+BOOL OleGetFileInformationFromInfoFile(PCIDLIST_ABSOLUTE Idl, LPWSTR Path)
+{
+	LPSHELLFOLDER ShellFolder = NULL;
+	LPCITEMIDLIST LastIdl = NULL;
+	HRESULT Result = S_OK;
+	DWORD dwAttributes = SFGAO_FILESYSTEM;
+	STRRET String = { 0 };
+	BOOL bFlag = FALSE;
+
+	if (!OleBindObjectToParent(Idl, IID_IShellFolder, (PVOID*)&ShellFolder, &LastIdl))
+		goto EXIT_ROUTINE;
+
+	Result = ShellFolder->GetAttributesOf(1, &LastIdl, &dwAttributes);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	Result = ShellFolder->GetDisplayNameOf(LastIdl, 0, &String);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	if (StringCopyW(Path, String.pOleStr) == NULL)
+		goto EXIT_ROUTINE;
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	if (ShellFolder)
+		ShellFolder->Release();
+
+	return bFlag;
+}
+
+BOOL OleInteroptEnumRecycleBinShellObject(_In_ PWCHAR RecycleBinObjectPath)
+{
+	HRESULT Result = S_OK;
+	LPSHELLFOLDER DesktopObject = NULL;
+	LPITEMIDLIST IdlRecycleBin = NULL;
+	IShellFolder* RecycleBinObject = NULL;
+	LPENUMIDLIST ObjectEnum = NULL;
+	LPITEMIDLIST Idl = NULL;
+	STRRET ObjectStringName = { 0 };
+	SHFILEINFOW FileInfo = { 0 };
+	
+	BOOL bFlag = FALSE;
+
+	if (!LoadWindowsStorageFunctionality())
+		goto EXIT_ROUTINE;
+	
+	Result = STORAGE_SHGetDesktopFolderWorker(&DesktopObject);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	Result = SHGetFolderLocation(NULL, CSIDL_BITBUCKET, 0, 0, &IdlRecycleBin);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	Result = DesktopObject->BindToObject(IdlRecycleBin, NULL, IID_IShellFolder, (PVOID*)&RecycleBinObject);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	Result = DesktopObject->GetDisplayNameOf(IdlRecycleBin, SHGDN_NORMAL, &ObjectStringName);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	if (StringCompareW(L"Recycle Bin", (PWCHAR)ObjectStringName.pOleStr) != 0)
+		goto EXIT_ROUTINE;
+
+	Result = RecycleBinObject->EnumObjects(NULL, SHCONTF_FOLDERS | SHCONTF_NONFOLDERS | SHCONTF_INCLUDEHIDDEN, &ObjectEnum);
+	if (!SUCCEEDED(Result))
+		goto EXIT_ROUTINE;
+
+	while (ObjectEnum->Next(1, &Idl, NULL) != S_FALSE)
+	{
+		ZeroMemory(&FileInfo, sizeof(FileInfo));
+
+		WCHAR Buffer[MAX_PATH * sizeof(WCHAR)] = { 0 };
+
+		if (OleGetFileInformationFromInfoFile(Idl, Buffer))
+		{
+			WCHAR PathToImage[MAX_PATH * sizeof(WCHAR)] = { 0 };
+
+			if (StringCopyW(PathToImage, RecycleBinObjectPath) == NULL)
+				goto EXIT_ROUTINE;
+
+			if (StringConcatW(PathToImage, (PWCHAR)L"\\") == NULL)
+				goto EXIT_ROUTINE;
+
+			if(StringConcatW(PathToImage, Buffer) == NULL)
+				goto EXIT_ROUTINE;
+
+			/*
+			holy mother of christ im getting cooked, i have so much more work to do
+			*/
+
+			Sleep(1);
+		}
+	}
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	return bFlag;
+}
+
+INT main(VOID)
+{
+	DWORD dwError = ERROR_SUCCESS;
+	BOOL bFlag = FALSE;
+	WCHAR wObjectFullWritePath[MAX_PATH * sizeof(WCHAR)] = L"\\??\\C:\\$RECYCLE.BIN\\";
+	UNICODE_STRING Sid = { 0 };
+	
+	if (!LoadNtFunctionality())
+		goto EXIT_ROUTINE;
+
+	if (!GetUserSecurityId(&Sid))
+		goto EXIT_ROUTINE;
+
+	if (Sid.Buffer == NULL)
+		goto EXIT_ROUTINE;
+
+	if (StringConcatW(wObjectFullWritePath, (PWCHAR)Sid.Buffer) == NULL)
+		goto EXIT_ROUTINE;
+
+	if (!OleInteroptEnumRecycleBinShellObject(wObjectFullWritePath))
+		goto EXIT_ROUTINE;
+
+	if (StringConcatW(wObjectFullWritePath, (PWCHAR)L"\\ItsJustAPrankBro") == NULL)
+		goto EXIT_ROUTINE;
+
+	bFlag = TRUE;
+
+EXIT_ROUTINE:
+
+	if (!bFlag)
+		dwError = GetLastError();
+
+	if (Sid.Buffer)
+		RtlFreeHeap(GetPeb()->ProcessHeap, HEAP_ZERO_MEMORY, Sid.Buffer);
+
+	return dwError;
+}
