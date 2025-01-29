@@ -1,0 +1,11 @@
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\bin\Debug\Gooner1.exe
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\bin\Debug\Gooner1.pdb
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\bin\Debug\Gooner1.xml
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.vbproj.AssemblyReference.cache
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.Resources.resources
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.vbproj.GenerateResource.cache
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.vbproj.CoreCompileInputs.cache
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.exe
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.xml
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.pdb
+C:\Users\adria\Desktop\g00nerm4lw4re\Gooner1\Gooner1\obj\Debug\Gooner1.Form1.resources
