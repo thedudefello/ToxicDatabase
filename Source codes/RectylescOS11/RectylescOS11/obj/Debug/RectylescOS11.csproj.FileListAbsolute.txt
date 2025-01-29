@@ -1,0 +1,12 @@
+F:\RectylescOS11\RectylescOS11\bin\Debug\RectylescOS11.exe
+F:\RectylescOS11\RectylescOS11\bin\Debug\RectylescOS11.pdb
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.csproj.AssemblyReference.cache
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.Form1.resources
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.Properties.Resources.resources
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.csproj.GenerateResource.cache
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.csproj.CoreCompileInputs.cache
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.exe
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.pdb
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.Form2.resources
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.Form3.resources
+F:\RectylescOS11\RectylescOS11\obj\Debug\RectylescOS11.Form4.resources
