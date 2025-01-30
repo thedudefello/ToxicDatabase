@@ -1,0 +1,9 @@
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\bin\Debug\NotepaadSpam.exe
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\bin\Debug\NotepaadSpam.pdb
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.csproj.AssemblyReference.cache
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.Form1.resources
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.Properties.Resources.resources
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.csproj.GenerateResource.cache
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.csproj.CoreCompileInputs.cache
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.exe
+C:\Users\April\source\repos\NotepaadSpam\NotepaadSpam\obj\Debug\NotepaadSpam.pdb
