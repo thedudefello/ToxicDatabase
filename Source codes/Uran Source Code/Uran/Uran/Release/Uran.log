@@ -1,0 +1,41 @@
+﻿Построение начато 29.01.2025 13:42:07.
+     1>Проект "E:\documents\C++\Уроки С++\Uran\Uran\Uran.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Release\Uran.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\Uran.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Uran.cpp
+         Uran.cpp
+     1>Uran.cpp(30): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(30): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(55): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(55): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(125): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(134): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     1>Uran.cpp(135): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     1>Uran.cpp(68): warning C4101: pt: неиспользованная локальная переменная
+     1>Uran.cpp(71): warning C4101: p1: неиспользованная локальная переменная
+     1>Uran.cpp(242): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(243): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(243): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+     1>Uran.cpp(296): warning C4244: =: преобразование "unsigned long" в "char", возможна потеря данных
+     1>Uran.cpp(368): warning C4244: =: преобразование "unsigned long" в "char", возможна потеря данных
+     1>Uran.cpp(419): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>Uran.cpp(399): warning C4101: b: неиспользованная локальная переменная
+     1>Uran.cpp(399): warning C4101: c: неиспользованная локальная переменная
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\documents\C++\Уроки С++\Uran\Release\Uran.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Uran.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\documents\C++\Уроки С++\Uran\Release\Uran.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\documents\C++\Уроки С++\Uran\Release\Uran.lib" /MACHINE:X86 Release\stdafx.obj
+         Release\Uran.obj
+         Создание кода
+         Создание кода завершено
+         Uran.vcxproj -> E:\documents\C++\Уроки С++\Uran\Release\Uran.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\documents\C++\Уроки С++\Uran\Release\Uran.exe;#1" /manifest Release\Uran.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Файл "Release\Uran.unsuccessfulbuild" удаляется.
+         Обращение к "Release\Uran.lastbuildstate".
+     1>Построение проекта "E:\documents\C++\Уроки С++\Uran\Uran\Uran.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.82
