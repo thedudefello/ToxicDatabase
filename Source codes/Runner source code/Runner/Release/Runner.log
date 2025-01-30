@@ -1,0 +1,24 @@
+﻿Построение начато 31.12.2024 13:39:18.
+     1>Проект "C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Runner\Runner.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Release\Runner.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+         Для всех выходных данных обновления не требуется.
+       Link:
+         Для всех выходных данных обновления не требуется.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Release\Runner.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Runner.exe.intermediate.manifest" /MANIFESTUAC:"level='highestAvailable' uiAccess='false'" /DEBUG /PDB:"C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Release\Runner.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Release\Runner.lib" /MACHINE:X86 Release\Runner.obj
+         Release\stdafx.obj
+         Создание кода
+         Создание кода завершено
+         Runner.vcxproj -> C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Release\Runner.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Release\Runner.exe;#1" /manifest Release\Runner.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Файл "Release\Runner.unsuccessfulbuild" удаляется.
+         Обращение к "Release\Runner.lastbuildstate".
+     1>Построение проекта "C:\Users\alexe\OneDrive\Desktop\Сетевая папка\Runner source code\Runner\Runner.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:01.93

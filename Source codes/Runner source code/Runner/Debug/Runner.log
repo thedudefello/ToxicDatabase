@@ -1,0 +1,28 @@
+﻿Построение начато 17.12.2024 14:22:13.
+     1>Проект "c:\Users\alexe\OneDrive\documents\visual studio 2010\Projects\Runner\Runner\Runner.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\Runner.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Runner.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Runner.cpp
+         Runner.cpp
+       ManifestResourceCompile:
+         Для всех выходных данных обновления не требуется.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\alexe\onedrive\documents\visual studio 2010\Projects\Runner\Debug\Runner.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Runner.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\alexe\onedrive\documents\visual studio 2010\Projects\Runner\Debug\Runner.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\alexe\onedrive\documents\visual studio 2010\Projects\Runner\Debug\Runner.lib" /MACHINE:X86 Debug\Runner.exe.embed.manifest.res
+         Debug\Runner.obj
+         Debug\stdafx.obj
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Runner.exe.embed.manifest" /manifest Debug\Runner.exe.intermediate.manifest
+         Для всех выходных данных обновления не требуется.
+       LinkEmbedManifest:
+         Для всех выходных данных обновления не требуется.
+         Runner.vcxproj -> c:\users\alexe\onedrive\documents\visual studio 2010\Projects\Runner\Debug\Runner.exe
+       FinalizeBuildStatus:
+         Файл "Debug\Runner.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\Runner.lastbuildstate".
+     1>Построение проекта "c:\Users\alexe\OneDrive\documents\visual studio 2010\Projects\Runner\Runner\Runner.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.83
