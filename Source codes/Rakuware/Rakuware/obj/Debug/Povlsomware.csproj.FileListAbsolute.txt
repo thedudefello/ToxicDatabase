@@ -1,0 +1,10 @@
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Povlsomware.csproj.AssemblyReference.cache
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\bin\Debug\Fileware.exe.config
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\bin\Debug\Fileware.exe
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\bin\Debug\Fileware.pdb
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Povlsomware.PayM3.resources
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Fileware.Properties.Resources.resources
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Povlsomware.csproj.GenerateResource.cache
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Povlsomware.csproj.CoreCompileInputs.cache
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Fileware.exe
+C:\Users\david\Downloads\Povlsomware-master\Povlsomware-master\Povlsomware\obj\Debug\Fileware.pdb
