@@ -1,0 +1,9 @@
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\bin\Debug\Epilepsy.exe
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\bin\Debug\Epilepsy.pdb
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.csproj.AssemblyReference.cache
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.Properties.Resources.resources
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.csproj.GenerateResource.cache
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.csproj.CoreCompileInputs.cache
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.exe
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.pdb
+J:\Users\Sami\source\repos\Epilepsy\Epilepsy\obj\Debug\Epilepsy.gdi.resources
