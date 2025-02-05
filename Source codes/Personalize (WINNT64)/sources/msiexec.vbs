@@ -1,0 +1,1 @@
+x=msgbox("WHAT YOU TRYING TO DO HUH?" ,0+16, "Windows NT Personalization Tool")
