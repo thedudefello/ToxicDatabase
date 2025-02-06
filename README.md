@@ -11,7 +11,7 @@
 > **I NEITHER AM I OR THE AUTHORS ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR MACHINE**
 
 It's just another Malware Database, y'know the drill, don't download this stuff unless you know what you're doing, the pass for the archives is at the bottom.
-
+And if there's something from this Database you want removed, comment on the file.
 
 # ERRORS
 If you find an error in the archives, like a wrong password or corrupt, feel free to make an Issue in the Issues tab, but read the FAQ first before doing so, thanks!
