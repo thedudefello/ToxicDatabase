@@ -1,0 +1,10 @@
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\bin\Release\Silly Files.exe.config
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\bin\Release\Silly Files.exe
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\bin\Release\Silly Files.pdb
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly Files.csproj.AssemblyReference.cache
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly_Files.Form1.resources
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly_Files.Properties.Resources.resources
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly Files.csproj.GenerateResource.cache
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly Files.csproj.CoreCompileInputs.cache
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly Files.exe
+C:\Users\Silly\OneDrive\Escritorio\SillyFiles c#\Silly Files\obj\Release\Silly Files.pdb
