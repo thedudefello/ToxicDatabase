@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35723.152 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows-Task-Dialog-Generator", "Windows-Task-Dialog-Generator.csproj", "{12C2D102-4590-4D23-A4A8-1367C3C1C42A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12C2D102-4590-4D23-A4A8-1367C3C1C42A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C2D102-4590-4D23-A4A8-1367C3C1C42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C2D102-4590-4D23-A4A8-1367C3C1C42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C2D102-4590-4D23-A4A8-1367C3C1C42A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A1D33F3-9491-4F0B-BC49-F5ADF70F21A2}
+	EndGlobalSection
+EndGlobal
