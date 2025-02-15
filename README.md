@@ -27,7 +27,8 @@ If you wanna suggest malware to add, make a merge or chat in the discussion or i
 # MISC
 
 ![Discord_OUHmjlML1n](https://github.com/user-attachments/assets/ccd90b21-9449-4921-bfbd-bab4e55ee724)
-It cam be used for rizzing?...
+
+It can be used for rizzing?...
 ## Password for Encrypted Files
 If you are sure that you want to explore it, below is a clickable element that will display the password.
 <details>
