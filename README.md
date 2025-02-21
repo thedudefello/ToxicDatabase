@@ -5,7 +5,7 @@
   ToxicDatabase
   <br>
 </h1>
-<h1 align="center">
+
 </a>
 <a href=https://github.com/FelloBoiYuuka/ToxicDatabase/pulse><img src=https://img.shields.io/github/repo-size/FelloBoiYuuka/ToxicDatabase?style=flat&logo=GitHub&logoColor=white&color=ff8f00></a>
 
