@@ -6,6 +6,7 @@
   <br>
 </h1>
 
+<a href=https://github.com/FelloBoiYuuka/ToxicDatabase/pulse><img src=https://img.shields.io/github/repo-size/FelloBoiYuuka/ToxicDatabase?style=flat&logo=GitHub&logoColor=white&color=ff8f00></a>
 
 > [!CAUTION]
 > **I NEITHER AM I OR THE AUTHORS ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR MACHINE**
