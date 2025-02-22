@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLBAR icons="icons.bmp" hot_icons="icons.bmp" name="MP3 Deskbar" dllname="deskbar" deskbarMinSize="270">
+    <COMMANDS>
+        <UNINSTALL name="uninstall"/>
+    </COMMANDS>
+    <SETTINGS scope="0">
+        <MESSAGE id="corruptedMsg" default="One of the XML files is corrupted or invalid. Press OK to uninstall."/>
+        <MESSAGE id="uninstallMsg" default="This will remove the Deskbar from your computer! Are you sure?"/>
+        <MESSAGE id="updateMsg" default="This will try to update the Deskbar from the server. Continue?"/>
+        <MESSAGE id="autoUpdateMsg" default="New version of Deskabr is available. Would you like to download and install new version?"/>
+        <MESSAGE id="versionError" default="Can not find current version information."/>
+        <MESSAGE id="connectionError" default="Can&#039;t establish a connection."/>
+        <MESSAGE id="lastVersionMsg" default="You have the latest version of the Deskbar."/>
+
+        <URL id="firstURL" default="http://www.deskbarbuilder.com/"/>
+        <URL id="serverpath" default="http://www.deskbarbuilder.com/deskbar/"/>
+        <URL id="updateUrl" default="http://www.deskbarbuilder.com/deskbar/deskbar.cab"/>
+        <URL id="urlAfterUpdate" default="http://www.deskbarbuilder.com/deskbar/updated.html?id=%toolbar_id"/>
+        <URL id="urlAfterUninstall" default="http://www.deskbarbuilder.com/deskbar/bye.php?id=%toolbar_id"/>
+
+       <FONT name="Tahoma" size="13"/>
+
+        <HIGHLIGHT>
+            <COLOR>F6FF00</COLOR>
+            <COLOR>00FFE4</COLOR>
+            <COLOR>5AFF00</COLOR>
+            <COLOR>0087FF</COLOR>
+            <COLOR>FFCC00</COLOR>
+            <COLOR>FF00F0</COLOR>
+        </HIGHLIGHT>
+        <COLOR_SCHEMA>
+          <!-- Toolbar skin image -->
+            <TOOLBAR_SKIN></TOOLBAR_SKIN>
+          <!-- Toolbar color -->
+            <TOOLBAR_FACE></TOOLBAR_FACE>
+          <!-- Menu background color -->
+            <MENU></MENU>
+          <!-- Selected menu background color -->
+            <SELECTED_MENU_ITEM></SELECTED_MENU_ITEM>
+          <!-- Text color -->
+            <TEXT></TEXT>
+          <!-- Text of item(s) selected in a menu -->
+            <HIGHLIGHT_TEXT></HIGHLIGHT_TEXT>
+          <!-- Grayed (disabled) text in a menu -->
+            <GRAY_TEXT></GRAY_TEXT> 
+          <!-- Highlight color for three-dimensional display elements (for edges facing the light source.) -->
+            <HIGHLIGHT3D></HIGHLIGHT3D>
+          <!-- Shadow for three-dimensional display elements. -->
+            <SHADOW3D></SHADOW3D>
+        </COLOR_SCHEMA>
+        <MESSAGE id="ErrorMsg" default="Error"/>
+        <MESSAGE id="AlertMsg" default="Alert"/>
+    </SETTINGS>
+    <BUTTON id="tbs_button_0AEWRF" caption="Uninstall" hint="Uninstall Deskbar" img="10" command="uninstall"/>
+    <SEPARATOR id="tbs_separator_015196"/>
+    <BANNER id="tbs_banner_004763" url="player.html#inbanner" width="150" expire="0"/>
+</TOOLBAR>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<player width="150" height="20" background="background.jpg" imagePath="." songsPath="." repeat="false">
+	<info x="0" y="-2" width="148" height="15" fontsize="9" fontfamily="Arial" fontcolor="0x000000" />
+	<bar x="42" y="14" width="106" height="1"  image="bar.jpg" show="true" />
+	<slider width="4" height="7" image="slider.jpg" show="true" />
+	<startButton x="11" y="11" image="play.jpg" show="true" />
+	<stopButton x="21" y="11" image="stop.jpg" show="true" />
+	<pauseButton x="11" y="11" image="pause.jpg" show="false" />
+	<nextButton x="31" y="11" image="next.jpg" show="true" />
+	<lastButton x="1" y="11" image="prev.jpg" show="true" />
+	<songs>
+		<song name="Sample artist #1 - sample song #1" file="1.mp3" />
+		<song name="Sample artist #2 - sample song #2" file="2.mp3" />
+	</songs>
+</player>

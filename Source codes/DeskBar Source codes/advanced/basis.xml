@@ -1,0 +1,94 @@
+
+<TOOLBAR icons="icons.bmp" hot_icons="icons.bmp" name="Advanced Deskbar" dllname="deskbar" deskbarMinSize="400">
+    <COMMANDS>
+        <WEBJUMP href="http://www.google.com/search?q=%mainsearch" name="searchmini" newbrowserwindow="minibrowser" minibrowserSearch="1"/>
+        <WEBJUMP href="http://www.google.com/search?q=%mainsearch" name="searchwww" newbrowserwindow="minibrowser" shortcut="w"/>
+        <UNINSTALL name="uninstall"/>
+        <WEBJUMP name="redirect" encoding="1252"/>
+        <WEBJUMP newbrowserwindow="false" href="http://www.google.com/search?q=%combo" name="searchGoogle"/>
+        <RELOAD name="reloadToolbar"/>
+        <HIGHLIGHT name="Highlight"/>
+        <UPDATE name="update"/>
+        <WEBJUMP name="tbscmd_barinit" href="http://www.deskbarbuilder.com/dbscripts/test.php" newbrowserwindow="minibrowser"/>
+        <WEBJUMP name="tbscmd_options" href="http://www.deskbarbuilder.com/dbscripts/login.php" newbrowserwindow="minibrowser" parse_events="1"/>
+    </COMMANDS>
+    <SETTINGS scope="0">
+        <MESSAGE id="corruptedMsg" default="One of the XML files is corrupted or invalid. Press OK to uninstall."/>
+        <MESSAGE id="uninstallMsg" default="This will remove the Sample Toolbar X from your computer! Are you sure?"/>
+        <MESSAGE id="updateMsg" default="This will try to update the Sample Toolbar X from the server. Continue?"/>
+        <MESSAGE id="autoUpdateMsg" default="New version of Sample Toolbar X is available. Would you like to download and install new version?"/>
+        <MESSAGE id="versionError" default="Can not find current version information."/>
+        <MESSAGE id="connectionError" default="Can't establish a connection."/>
+        <MESSAGE id="lastVersionMsg" default="You have the latest version of the Sample Toolbar X."/>
+        <MESSAGE id="contextMenuItemName" default="Sample Toolbar X search"/>
+        <MESSAGE id="closeAllWindowsForUpdate" default="All running IE Windows will be closed before updating the Sample Toolbar X. Continue?"/>
+        <URL id="firstURL" default="http://www.softomate.com/toolbar/after_install.html"/>
+        <URL id="serverpath" default="http://www.softomate.com/toolbar/"/>
+        <URL id="updateUrl" default="http://www.softomate.com/toolbar/toolbar.cab"/>
+        <URL id="urlAfterUpdate" default="http://www.softomate.com/toolbar/after_update.html"/>
+        <URL id="urlAfterUninstall" default="http://www.softomate.com/toolbar/after_uninstall.html"/>
+        <URL id="contextSearch" default="http://www.google.com/search?q=%selection"/>
+        <CHECKBOX id="OpenNew" default="0"/>
+        <CHECKBOX id="AutoComplete" default="1"/>
+        <CHECKBOX id="KeepHistory" default="1"/>
+        <CHECKBOX id="RunSearchAutomatically" default="1"/>
+        <CHECKBOX id="RunSearchDragAutomatically" default="1"/>
+        <CHECKBOX id="DescriptiveText" default="1"/>
+        <CHECKBOX id="ShowHighlightButton" default="1"/>
+        <CHECKBOX id="ShowFindButtons" default="0"/>
+        <CHECKBOX id="UpdateAutomatically" default="0"/>
+        <COMBO id="EditWidthcombo1" default="1"/>
+        <RADIO name="EditWidthcombo1" default="1">
+            <id>Widthcombo10</id>
+            <id>Widthcombo11</id>
+            <id>Widthcombo12</id>
+        </RADIO>
+		<MINIBROWSER closeimage="mbclose.bmp" logoimage="mblogo.bmp" openimage="mbbigopen.bmp" backimage="mbback.bmp" fwdimage="mbfwd.bmp" sepimage="mbsep.bmp" />        
+        <CHECKBOX id="MinibrowserDisplayResults" default="1" optionsDescription="Display search results in mini-viewer"/>
+        <CHECKBOX id="MinibrowserAutoClose" default="1" optionsDescription="Automatically close mini-viewer when you leave it"/>
+        <CHECKBOX id="MinibrowserAnimated" default="1" optionsDescription="Use animated open and close"/>
+        <FONT name="Tahoma" size="13"/>
+        <HIGHLIGHT>
+            <COLOR>F6FF00</COLOR>
+            <COLOR>00FFE4</COLOR>
+            <COLOR>5AFF00</COLOR>
+            <COLOR>0087FF</COLOR>
+            <COLOR>FFCC00</COLOR>
+            <COLOR>FF00F0</COLOR>
+        </HIGHLIGHT>
+        <COLOR_SCHEMA>
+          <!-- Toolbar skin image -->
+            <TOOLBAR_SKIN></TOOLBAR_SKIN>
+          <!-- Toolbar color -->
+            <TOOLBAR_FACE></TOOLBAR_FACE>
+          <!-- Menu background color -->
+            <MENU></MENU>
+          <!-- Selected menu background color -->
+            <SELECTED_MENU_ITEM></SELECTED_MENU_ITEM>
+          <!-- Text color -->
+            <TEXT></TEXT>
+          <!-- Text of item(s) selected in a menu -->
+            <HIGHLIGHT_TEXT></HIGHLIGHT_TEXT>
+          <!-- Grayed (disabled) text in a menu -->
+            <GRAY_TEXT></GRAY_TEXT>
+          <!-- Highlight color for three-dimensional display elements (for edges facing the light source.) -->
+            <HIGHLIGHT3D></HIGHLIGHT3D>
+          <!-- Shadow for three-dimensional display elements. -->
+            <SHADOW3D></SHADOW3D>
+        </COLOR_SCHEMA>
+        <MESSAGE id="PopStop" default="Untitled Toolbar has blocked a Pop-up window"/>
+        <MESSAGE id="ErrorMsg" default="Error"/>
+        <MESSAGE id="AlertMsg" default="Alert"/>
+        <TBStudioSign regname="XBTB01075" defenc="1252"/>
+    </SETTINGS>
+    <EDIT name="mainsearch" hint="Enter Search Terms" limit="40" histmax="10" id="id_cmb_mainsearch" command="searchmini" minWidth="40" maxWidth="60" background_type="image" background_image="background.bmp">
+        <WIDTH>50</WIDTH>
+        <WIDTH>100</WIDTH>
+        <WIDTH>200</WIDTH>
+    </EDIT>
+    <BUTTON hint="Search" id="tb_btn_search" image="logo.bmp" combomove="mainsearch" command="searchwww"/>
+
+    <BUTTON id="tbs_button_020342" caption="BarInit" type="Split" command="tbscmd_barinit" img="2"/>
+    <BUTTON id="tbs_button_022055" caption="Options" type="Split" command="tbscmd_options" img="3"/>
+    <BUTTON id="tbs_button_003978" caption="Highlight" type="Split" command="Highlight" img="4"/>
+</TOOLBAR>

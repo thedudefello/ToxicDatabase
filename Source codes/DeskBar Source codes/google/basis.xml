@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TOOLBAR icons="nav1.bmp" hot_icons="nav2.bmp" name="Search Bar" dllname="deskbar" deskbarMinSize="235">
+
+    <EDIT name="mainsearch" hint="Enter Search Terms" limit="40" histmax="10" id="id_cmb_mainsearch" command="searchmini" minWidth="100" maxWidth="400" background_type="image" background_image="background.bmp">
+        <WIDTH>100</WIDTH>
+        <WIDTH>150</WIDTH>
+        <WIDTH>200</WIDTH>
+    </EDIT>
+    <BUTTON hint="Search" id="tb_btn_search" image="logo.bmp" combomove="mainsearch" command="searchwww">
+        <MENU type="Split">
+            <ITEM caption="Help">
+        <ITEM caption="About Deskbar" command="about"/>
+        <SEPARATOR/>
+        <ITEM caption="Uninstall" command="uninstall"/>
+            </ITEM> 
+            <ITEM caption="Clear AutoComplete History" command="clearhistory"/>
+        <ITEM id="btn_setting" caption="Options" command="setting"/>
+        <SEPARATOR/>
+            <ITEM caption="Software Downloads" command="searchdownloads"/>
+            <ITEM caption="Movie Reviews" command="searchmovies"/>
+            <ITEM caption="Thesaurus (ctrl-T)" command="searchthesaurus"/>
+            <ITEM caption="Stock Quotes (ctrl-Q)" command="searchstocks"/>
+        <SEPARATOR/>
+            <ITEM caption="Definitions (ctrl-D)" command="searchdef"/>
+            <ITEM caption="Search Froogle (ctrl-F)" command="searchfroogle"/>
+            <ITEM caption="Search News (ctrl-W)" command="searchnews"/>
+            <ITEM caption="Search Groups (ctrl-U)" command="searchusenet"/>
+        <ITEM caption="Search Images (ctrl-I)" command="searchimg"/>
+            <ITEM caption="I'm Feeling Lucky (ctrl-L)" command="searchlucky"/>
+        <ITEM caption="Search The Web (ctrl-W)" img="1" command="searchwww"/>
+        </MENU>
+    </BUTTON>
+   
+    <COMMANDS>
+        <HIGHLIGHT name="Highlight"/>
+
+        <UPDATE name="update"/>
+        <UNINSTALL name="uninstall"/>
+
+    <WEBJUMP href="http://www.google.com/search?q=%mainsearch" name="searchmini" newbrowserwindow="minibrowser" minibrowserSearch="1"/>
+    <WEBJUMP href="http://www.google.com/search?q=%mainsearch" name="searchwww" newbrowserwindow="minibrowser" shortcut="w"/>
+    <WEBJUMP href="http://www.download.com/3120-20-0.html?qt=%mainsearch&amp;tg=dl-20" name="searchdownloads" newbrowserwindow="minibrowser" minibrowserSearch="1"/>
+    <WEBJUMP href="http://www.rottentomatoes.com/search/full_search.php?search=%mainsearch" name="searchmovies" newbrowserwindow="minibrowser" minibrowserSearch="1"/>
+    <WEBJUMP href="http://www.google.com/search?q=define:%mainsearch" name="searchdef" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="d"/>
+    <WEBJUMP href="http://www.google.com/search?q=stocks:%mainsearch" name="searchstock" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="q"/>
+    <WEBJUMP href="http://thesaurus.reference.com/search?q=%mainsearch" name="searchthesaurus" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="t"/>
+    <WEBJUMP href="http://froogle.google.com/froogle?q=%mainsearch" name="searchfroogle" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="f"/>
+    <WEBJUMP href="http://news.google.com/news?q=%mainsearch" name="searchnews" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="n"/>
+    <WEBJUMP href="http://groups.google.com/groups?q=%mainsearch" name="searchusenet" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="u"/>
+    <WEBJUMP href="http://images.google.com/images?q=%mainsearch" name="searchimg" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="i"/>
+    <WEBJUMP href="http://www.google.com/search?q=%mainsearch&amp;btnI=I%27m+Feeling+Lucky" name="searchlucky" newbrowserwindow="minibrowser" minibrowserSearch="1" shortcut="l"/>
+    <WEBJUMP href="" name="redirect"/>
+    <WEBJUMP newbrowserwindow="true" href="" name="redirect2"/>
+    <CLEARHISTORY name="clearhistory"/>
+
+    <RELOAD name="reload"/>
+
+        <LOCALHTML name="about" href="about.html" newbrowserwindow="optionspage" optionswidth="350" optionsheight="250" optionsalign="center"/>
+        <LOCALHTML name="setting" href="options.html" newbrowserwindow="optionspage" optionswidth="400" optionsheight="300" optionsalign="docked" optionstitle="Deskbar options"/>
+        <LOCALHTML name="softomate" href="softomate.gif"/>
+
+    </COMMANDS>
+    <SETTINGS>
+
+    <EXTERNAL_SEARCH target="mainsearch" engine="google." param="q="/>
+        <EXTERNAL_SEARCH target="mainsearch" engine="google." param="as_q="/>
+        <EXTERNAL_SEARCH target="mainsearch" engine="google." param="as_epq="/>
+        <EXTERNAL_SEARCH target="mainsearch" engine="google." param="as_oq="/>
+
+        <MESSAGE id="corruptedMsg" default="One of the XML files is corrupted or invalid. Press OK to uninstall."/>
+        <MESSAGE id="uninstallMsg" default="This will remove the Deskbar from your computer! Are you sure?"/>
+        <MESSAGE id="updateMsg" default="This will try to update the Deskbar from the server. Continue?"/>
+        <MESSAGE id="autoUpdateMsg" default="New version of Deskabr is available. Would you like to download and install new version?"/>
+        <MESSAGE id="versionError" default="Can not find current version information."/>
+        <MESSAGE id="connectionError" default="Can&#039;t establish a connection."/>
+        <MESSAGE id="lastVersionMsg" default="You have the latest version of the Deskbar."/>
+
+        <URL id="firstURL" default="http://www.deskbarbuilder.com/"/>
+        <URL id="serverpath" default="http://www.deskbarbuilder.com/deskbar/"/>
+        <URL id="updateUrl" default="http://www.deskbarbuilder.com/deskbar/deskbar.cab"/>
+        <URL id="urlAfterUpdate" default="http://www.deskbarbuilder.com/deskbar/updated.html?id=%toolbar_id"/>
+        <URL id="urlAfterUninstall" default="http://www.deskbarbuilder.com/deskbar/bye.php?id=%toolbar_id"/>
+
+	<CHECKBOX id="OpenNew" default="0" optionsDescription="Open a new window to display results each time you search"/>
+	<CHECKBOX id="AutoComplete" default="1" optionsDescription="Auto Complete"/>
+	<CHECKBOX id="KeepHistory" default="1" optionsDescription="Keep a search history in a drop-down list under the search box"/>
+	<CHECKBOX id="RunSearchAutomatically" default="1" optionsDescription="Automatically run a search when you select from the search history"/>
+	<CHECKBOX id="RunSearchDragAutomatically" default="1" optionsDescription="Run Search Drag Automatically"/>
+	<CHECKBOX id="DescriptiveText" default="1" optionsDescription="Show Descriptive Text"/>
+	<CHECKBOX id="ShowHighlightButton" default="1" optionsDescription="Show Highlight Button"/>
+	<CHECKBOX id="UpdateAutomatically" default="0"/>
+
+        <CHECKBOX id="MinibrowserDisplayResults" default="1" optionsDescription="Display search results in mini-viewer"/>
+        <CHECKBOX id="MinibrowserAutoClose" default="1" optionsDescription="Automatically close mini-viewer when you leave it"/>
+        <CHECKBOX id="MinibrowserAnimated" default="1" optionsDescription="Use animated open and close"/>
+
+        <COMBO id="EditWidthcombo1" default="1"/>
+
+        <RADIO name="EditWidthcombo1" default="1">
+            <id>Widthcombo10</id>
+            <id>Widthcombo11</id>
+            <id>Widthcombo12</id>
+        </RADIO>
+
+        <COMBO id="EditWidthcombo2" default="1"/>
+
+        <RADIO name="EditWidthcombo2" default="1">
+            <id>Widthcombo20</id>
+            <id>Widthcombo21</id>
+            <id>Widthcombo22</id>
+        </RADIO>
+
+        <FONT name="Tahoma" size="13"/>
+
+        <HIGHLIGHT>
+            <COLOR>F6FF00</COLOR>
+            <COLOR>00FFE4</COLOR>
+            <COLOR>5AFF00</COLOR>
+            <COLOR>0087FF</COLOR>
+            <COLOR>FFCC00</COLOR>
+            <COLOR>FF00F0</COLOR>
+        </HIGHLIGHT>
+
+    <MINIBROWSER closeimage="mbclose.bmp" logoimage="mblogo.bmp" openimage="mbbigopen.bmp" backimage="mbback.bmp" fwdimage="mbfwd.bmp" sepimage="mbsep.bmp" />
+
+        <COLOR_SCHEMA>
+
+            <!-- Toolbar skin image -->
+            <TOOLBAR_SKIN></TOOLBAR_SKIN>
+
+            <!-- Toolbar color -->
+            <TOOLBAR_FACE></TOOLBAR_FACE>
+
+            <!-- Menu background color -->
+            <MENU></MENU>
+
+            <!-- Selected menu background color -->
+            <SELECTED_MENU_ITEM></SELECTED_MENU_ITEM>
+
+            <!-- Text color -->
+            <TEXT></TEXT>
+
+            <!-- Text of item(s) selected in a menu -->
+            <HIGHLIGHT_TEXT></HIGHLIGHT_TEXT>
+
+            <!-- Grayed (disabled) text in a menu -->
+            <GRAY_TEXT></GRAY_TEXT>
+
+            <!-- Highlight color for three-dimensional display elements (for edges facing the light source.) -->
+            <HIGHLIGHT3D></HIGHLIGHT3D>
+
+            <!-- Shadow for three-dimensional display elements. -->
+            <SHADOW3D></SHADOW3D>
+        </COLOR_SCHEMA>
+    </SETTINGS>
+</TOOLBAR>
