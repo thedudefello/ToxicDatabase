@@ -5,10 +5,17 @@
   ToxicDatabase
   <br>
 </h1>
-Useful stats:
+<p align="center">
 </a>
 <a href=https://github.com/FelloBoiYuuka/ToxicDatabase/pulse><img src=https://img.shields.io/github/repo-size/FelloBoiYuuka/ToxicDatabase?style=flat&logo=GitHub&logoColor=white&color=ff8f00></a>
+<a href="https://github.com/FelloBoiYuuka/ToxicDatabase/issues">
+<img src="https://img.shields.io/github/issues-raw/FelloBoiYuuka/ToxicDatabase.svg?style=flat&logo=github&logoColor=white"
+<a href="https://github.com/FelloBoiYuuka/ToxicDatabase/releases">
+<img alt="Latest GitHub release" src="https://img.shields.io/github/release/FelloBoiYuuka/ToxicDatabase.svg?style=flat" />
+<a href=https://github.com/FelloBoiYuuka/ToxicDatabase/archive/refs/heads/main.zip><img src=https://img.shields.io/badge/%F0%9F%93%A5%20Download_Repo-red></a>
+</a>
 
+## Main
 > [!CAUTION]
 > **I NEITHER AM I OR THE AUTHORS ARE RESPONSIBLE FOR ANY DAMAGE CAUSED TO YOUR MACHINE**
 
@@ -31,6 +38,10 @@ If you wanna suggest malware to add, make a merge or chat in the discussion or i
 ![Discord_OUHmjlML1n](https://github.com/user-attachments/assets/ccd90b21-9449-4921-bfbd-bab4e55ee724)
 
 It can be used for rizzing?...
+## The community
+[![](https://dcbadge.limes.pink/api/server/FV48uwmBdH)](https://discord.gg/FV48uwmBdH)
+
+
 ## Password for Encrypted Files
 If you are sure that you want to explore it, below is a clickable element that will display the password.
 <details>
