@@ -1,0 +1,6 @@
+C:\Users\David\source\repos\memzR\bin\Debug\memzR.exe
+C:\Users\David\source\repos\memzR\bin\Debug\memzR.pdb
+C:\Users\David\source\repos\memzR\obj\Debug\memzR.csproj.AssemblyReference.cache
+C:\Users\David\source\repos\memzR\obj\Debug\memzR.csproj.CoreCompileInputs.cache
+C:\Users\David\source\repos\memzR\obj\Debug\memzR.exe
+C:\Users\David\source\repos\memzR\obj\Debug\memzR.pdb
