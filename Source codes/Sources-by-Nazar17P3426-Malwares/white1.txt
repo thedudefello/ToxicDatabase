@@ -1,0 +1,14 @@
+#include <windows.h>
+
+int main() {
+while(1)
+{
+    HDC hdc = GetDC(NULL);
+    int w = GetSystemMetrics(SM_CXSCREEN),
+        h = GetSystemMetrics(SM_CYSCREEN);
+
+    StretchBlt(hdc, 10, 10, w - 20, h - 20, hdc, 0, 0, w, h, SRCPAINT);
+    StretchBlt(hdc, -10, -10, w + 20, h + 20, hdc, 0, 0, w, h, SRCPAINT);
+    ReleaseDC(NULL, hdc);
+}
+}

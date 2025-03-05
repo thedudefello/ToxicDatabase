@@ -1,0 +1,17 @@
+#include <windows.h>
+#include <cmath>
+
+int main() {
+    int sw = GetSystemMetrics(0), sh = GetSystemMetrics(1);
+    double moveangle = 0;
+    while (1) {
+        HDC hdc = GetDC(0);
+        SelectObject(hdc, CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255)));
+        int rx = rand() % sw;
+        int ry = rand() % sh;
+        BitBlt(hdc, 10, ry, sw, 96, hdc, 0, ry, 0x1900ac010e);
+        BitBlt(hdc, -10, ry, sw, -96, hdc, 0, ry, 0x1900ac010e);
+        ReleaseDC(0, hdc);
+        Sleep(10);
+    }
+}

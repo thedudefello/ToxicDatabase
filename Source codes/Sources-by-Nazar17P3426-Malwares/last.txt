@@ -1,0 +1,18 @@
+#include <windows.h>
+
+int main() {
+	HDC hdc = GetDC(0); HWND wnd = GetDesktopWindow();
+	int sw = GetSystemMetrics(0), sh = GetSystemMetrics(1);
+	double angle = 0;
+	while (1) {
+		hdc = GetDC(0);
+		for (float i = 0; i < sw + sh; i += 0.99f) {
+			int a = sin(angle) * 360;
+			BitBlt(hdc, 0, i, sw, 1, hdc, a, i, SRCCOPY);
+			angle += M_PI / 3;
+			DeleteObject(&i); DeleteObject(&a);
+		}
+		ReleaseDC(wnd, hdc);
+		DeleteDC(hdc); DeleteObject(&sw); DeleteObject(&sh); DeleteObject(&angle);
+	}
+}

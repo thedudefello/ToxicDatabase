@@ -1,0 +1,23 @@
+#include <windows.h>
+
+int main() {
+	HDC desk = GetDC(0);
+	int ScrW = GetSystemMetrics(SM_CXSCREEN), ScrM = GetSystemMetrics(SM_CYSCREEN);
+    POINT wPt[3];
+    RECT wRect;
+    while (true)
+    {
+    	HDC desk = GetDC(0);
+        GetWindowRect(GetDesktopWindow(), &wRect);
+        int c = 10;
+        wPt[0].x = wRect.left + rand() % 11 - 5;
+        wPt[0].y = wRect.top + rand() % 21 - 10;
+        wPt[1].x = wRect.right + rand() % 21 - 10;
+        wPt[1].y = wRect.top + rand() % 41 - 20;
+        wPt[2].x = wRect.left + c - rand() % 21 - c;
+        wPt[2].y = wRect.bottom - c + rand() % 21 - c;
+        PlgBlt(desk, wPt, desk, wRect.left, wRect.top, wRect.right - wRect.left, wRect.bottom - wRect.top, 0, 0, 0);
+        Sleep(2);
+    }
+    return 0;
+}

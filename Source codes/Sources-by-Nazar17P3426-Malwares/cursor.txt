@@ -1,0 +1,12 @@
+#include <windows.h>
+
+int main() {
+	while (1) {
+		HDC hdc = GetDC(0);
+		int x = GetSystemMetrics(SM_CXSCREEN);
+		int y = GetSystemMetrics(SM_CYSCREEN);
+		DrawIcon(hdc, rand() % x, rand() % y, LoadCursor(0, IDC_ARROW));
+		Sleep(10);
+		ReleaseDC(0, hdc);
+	}
+}

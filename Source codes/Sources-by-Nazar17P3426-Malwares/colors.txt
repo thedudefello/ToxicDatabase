@@ -1,0 +1,14 @@
+#include <windows.h>
+
+int main() {
+	while(1){
+    HDC hdc = GetDC(NULL);
+    int w = GetSystemMetrics(SM_CXSCREEN),
+        h = GetSystemMetrics(SM_CYSCREEN);
+    HBRUSH brush = CreateSolidBrush(RGB(rand() % 100, rand() % 100, rand() % 100));
+    SelectObject(hdc, brush);
+    PatBlt(hdc, 0, 0, w, h, PATINVERT);
+    DeleteObject(brush);
+    ReleaseDC(NULL, hdc);
+	}
+}

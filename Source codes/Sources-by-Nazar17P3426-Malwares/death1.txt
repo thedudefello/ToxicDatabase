@@ -1,0 +1,15 @@
+#include <windows.h>
+
+int main() {
+    HDC hdc;
+    int sx = 0, sy = 0;
+    LPCWSTR lpText = L"death";
+    while(1)
+    {
+        hdc = GetWindowDC(GetDesktopWindow());
+        sx = GetSystemMetrics(0);
+        sy = GetSystemMetrics(1);
+        TextOutW(hdc, rand() % sx, rand() % sy, lpText, wcslen(lpText));
+        Sleep(100);
+    }
+}

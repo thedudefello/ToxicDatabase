@@ -1,0 +1,13 @@
+#include <windows.h>
+
+int main() {
+	int sw = GetSystemMetrics(SM_CXSCREEN);
+	int sh = GetSystemMetrics(SM_CYSCREEN);
+	while (true)
+	{
+		HDC hdc = GetDC(NULL);
+		int a = rand() % sw, b = rand() % sh;
+		BitBlt(hdc, a, b, 200, 200, hdc, a + rand() % 21 - 10, b + rand() % 21 - 10, SRCCOPY);
+		ReleaseDC(NULL, hdc);
+	}
+}

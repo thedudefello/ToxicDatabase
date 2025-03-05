@@ -1,0 +1,17 @@
+#include <windows.h>
+
+int main() {
+	HDC hdc = GetDC(HWND_DESKTOP);
+	int sw = GetSystemMetrics(SM_CXSCREEN), sh = GetSystemMetrics(SM_CYSCREEN);
+	
+	while (true)
+	{
+		HDC hdc = GetDC(HWND_DESKTOP);
+		int y = rand()%sh, h = sh - rand()%sh - (sh / 1 - 8);
+		HBRUSH brush = CreateSolidBrush(RGB(rand()%255, rand()%255, rand()%255));
+	    SelectObject(hdc, brush);
+	    BitBlt(hdc, 0, y, sw, h, hdc, rand() % 96 - 56, y, SRCCOPY);
+	    PatBlt(hdc, -1, y, sw, h, PATINVERT);
+	    Sleep(10);
+	}
+}

@@ -1,0 +1,16 @@
+#include <windows.h>
+
+int main() {
+	HDC hdc = GetDC(HWND_DESKTOP);
+	int x, y;
+	x = GetSystemMetrics(SM_CXSCREEN);
+	y = GetSystemMetrics(SM_CYSCREEN);
+	while(1)
+	{
+		hdc = GetDC(HWND_DESKTOP);
+		LineTo(hdc, rand() % (0 - x), y);
+		LineTo(hdc, rand() % (0 - x), y);
+    	ReleaseDC(NULL, hdc);
+    	Sleep(10);
+	}
+}

@@ -1,0 +1,13 @@
+#include <windows.h>
+
+int main() {
+	HDC desktop = GetDC(NULL);
+	int xs = GetSystemMetrics(SM_CXSCREEN);
+	int ys = GetSystemMetrics(SM_CYSCREEN);
+	while (true) {
+		desktop = GetDC(NULL);
+		BitBlt(desktop, 1,1, xs, ys, desktop, -2,2, SRCERASE);
+		ReleaseDC(0, desktop);
+		Sleep(10);
+	}
+}

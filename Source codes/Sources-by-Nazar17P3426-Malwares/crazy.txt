@@ -1,0 +1,10 @@
+#include <windows.h>
+
+{
+	while (1) {
+		INT w = GetSystemMetrics(0), h = GetSystemMetrics(1);
+		int X = rand() % w;
+		int Y = rand() % h;
+		SetCursorPos(X, Y);
+	}
+}

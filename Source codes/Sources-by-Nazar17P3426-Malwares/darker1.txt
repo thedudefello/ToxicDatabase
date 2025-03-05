@@ -1,0 +1,17 @@
+#include <windows.h>
+
+int main()
+{
+    HDC desk;
+    int sw, sh, ColorRefReq, ColorRef;
+    for(;;)
+    {
+        desk = GetDC(0);
+        sw = GetSystemMetrics(0), sh = GetSystemMetrics(1);
+        ColorRefReq = (rand() % 255) << 8;
+        ColorRef = (ColorRefReq | (rand() % 255)) << 8;
+        HBRUSH brush = CreateSolidBrush(ColorRef | rand() % 255);
+        SelectObject(desk, brush);
+        BitBlt(desk, rand() % 10, rand() % 10, sw, sh, desk, rand() % 10, rand() % 30, MERGECOPY);
+    }
+}

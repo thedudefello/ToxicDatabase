@@ -1,0 +1,12 @@
+#include <windows.h>
+
+int main() {
+   while (1) {
+      HDC hdc = GetDC(0);
+      int sw = GetSystemMetrics(0);
+      int sh = GetSystemMetrics(1);
+      SetStretchBltMode(hdc, HALFTONE);
+      StretchBlt(hdc, 1, 1, sw + 2, sh + 2, hdc, 0, 0, sw, sh, SRCCOPY);
+      ReleaseDC(0, hdc);
+   }
+}

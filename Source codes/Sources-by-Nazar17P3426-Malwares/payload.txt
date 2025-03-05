@@ -1,0 +1,27 @@
+#include <windows.h>
+#define RGBBRUSH (DWORD)0x1900ac010e
+#include <intrin.h>
+
+DWORD xs;
+VOID SeedXorshift32(DWORD dwSeed) {
+xs = dwSeed;
+}
+DWORD xorshift32() {
+	xs ^= xs << 13;
+	xs ^= xs << 17;
+	xs ^= xs << 5;
+	return xs;
+}
+
+int main() {
+	HDC desk = GetDC(0);
+	int sw = GetSystemMetrics(0), sh = GetSystemMetrics(1);
+	while (1) {
+		SeedXorshift32(__rdtsc());
+		desk = GetDC(0);
+		SelectObject(desk, CreateHatchBrush(xorshift32() % 7, RGB(xorshift32() % 255, xorshift32() % 255, xorshift32() % 255)));
+		Ellipse(desk, xorshift32() % sw, xorshift32() % sh, xorshift32() % sw, xorshift32() % sh);
+		Rectangle(desk, xorshift32() % sw, xorshift32() % sh, xorshift32() % sw, xorshift32() % sh);
+		Sleep(20);
+	}
+}

@@ -1,0 +1,24 @@
+#include <windows.h>
+#include <cmath>
+#pragma comment(lib, "msimg32.lib")
+
+DWORD WINAPI transparent(LPVOID lpParam)
+{
+    HWND wnd = GetDesktopWindow();
+    HDC hdcScreen = GetDC(0);
+    int sw = GetSystemMetrics(0), sh = GetSystemMetrics(1);
+    COLORREF TransparentBltColor = (RGB(rand() % 255, rand() % 255, rand() % 255));
+    while (1) {
+        for (;;) {
+            TransparentBlt(hdcScreen, rand() % 255, rand() % 255, sw, sh, hdcScreen, rand() % 255, rand() % 255, rand() % 255, rand() % 255, TransparentBltColor);
+        }
+        ReleaseDC(wnd, hdcScreen);
+        DeleteDC(hdcScreen); DeleteObject(&sw); DeleteObject(&sh);
+    }
+}
+
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR szCmdNShow, int nCmdShow)
+{
+    HANDLE thread1 = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)transparent, 0, 0, 0);
+    Sleep(-1);
+}

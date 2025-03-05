@@ -1,0 +1,14 @@
+#include <windows.h>
+
+int main() {
+	POINT cursor;
+	while (1) {
+		GetCursorPos(&cursor);
+		int X = cursor.x + rand() % 3 - 1;
+		int Y = cursor.y + rand() % 3 - 1;
+		SetCursorPos(X, Y);
+		BlockInput(true);
+		Sleep(10);
+	}
+	return(1);
+}
