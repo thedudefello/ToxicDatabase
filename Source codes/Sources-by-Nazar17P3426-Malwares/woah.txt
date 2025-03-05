@@ -1,0 +1,16 @@
+#include <windows.h>
+
+int main() {
+	while (1) {
+		HDC hdc = GetDC(0);
+		int x = GetSystemMetrics(0);
+		int y = GetSystemMetrics(1);
+		HBRUSH brush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
+		SelectObject(hdc, brush);
+		SetStretchBltMode(hdc, HALFTONE);
+		//StretchBlt(hdc, -10, -10, x + 20, y + 20, hdc, 0, 0, x, y, 0x1900ac010e);
+		StretchBlt(hdc, rand() % 10, rand() % 10, x - 20, y - 20, hdc, 0, 0, x, y, 0x1900ac010e);
+		DeleteObject(brush);
+		ReleaseDC(0, hdc);
+	}
+}

@@ -1,0 +1,32 @@
+#include <windows.h>
+#define RGBBRUSH (DWORD)0x1900ac010e
+#include <intrin.h>
+
+DWORD xs;
+VOID SeedXorshift32(DWORD dwSeed) {
+xs = dwSeed;
+}
+DWORD xorshift32() {
+	xs ^= xs << 13;
+	xs ^= xs << 17;
+	xs ^= xs << 5;
+	return xs;
+}
+
+int main() {
+	HDC desk = GetDC(0);
+	int sw = GetSystemMetrics(0), sh = GetSystemMetrics(1);
+	int rx;
+	for (int i = 0;; i++) {
+		SeedXorshift32(__rdtsc());
+		desk = GetDC(0);
+		rx = xorshift32() % sw;
+		int ry = xorshift32() % sh;
+		SelectObject(desk, CreateSolidBrush(RGB(xorshift32() % 255, xorshift32() % 255, xorshift32() % 255)));
+		BitBlt(desk, rx, 10, 100, sh, desk, rx, 0, RGBBRUSH);
+		BitBlt(desk, rx, -10, -100, sh, desk, rx, 0, RGBBRUSH);
+		BitBlt(desk, 10, ry, sw, 96, desk, 0, ry, RGBBRUSH);
+		BitBlt(desk, -10, ry, sw, -96, desk, 0, ry, RGBBRUSH);
+		Sleep(1);
+	}
+}
