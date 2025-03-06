@@ -1,0 +1,1 @@
+void EncodeBase64(char *strFile, char *szPath);

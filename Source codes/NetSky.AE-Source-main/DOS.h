@@ -1,0 +1,1 @@
+DWORD _stdcall DOSATTACK(LPVOID th);
