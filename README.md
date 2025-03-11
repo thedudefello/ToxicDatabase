@@ -38,7 +38,7 @@ If you wanna suggest malware to add, make a merge or chat in the discussion or i
 
 It can be used for rizzing?...
 ## The community
-[![](https://dcbadge.limes.pink/api/server/FV48uwmBdH)](https://discord.gg/tM6Zbr7PeR)
+[![](https://dcbadge.limes.pink/api/server/tM6Zbr7PeR)](https://discord.gg/tM6Zbr7PeR)
 
 
 ## Password for Encrypted Files
