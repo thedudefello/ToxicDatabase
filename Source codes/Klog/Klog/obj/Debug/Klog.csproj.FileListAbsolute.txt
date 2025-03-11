@@ -1,0 +1,7 @@
+C:\Users\jena0\source\repos\Klog\Klog\obj\Debug\Klog.csproj.CoreCompileInputs.cache
+C:\Users\jena0\source\repos\Klog\Klog\obj\Debug\Klog.Properties.Resources.resources
+C:\Users\jena0\source\repos\Klog\Klog\obj\Debug\Klog.csproj.GenerateResource.cache
+C:\Users\jena0\source\repos\Klog\Klog\bin\Debug\setup.exe
+C:\Users\jena0\source\repos\Klog\Klog\bin\Debug\setup.pdb
+C:\Users\jena0\source\repos\Klog\Klog\obj\Debug\setup.exe
+C:\Users\jena0\source\repos\Klog\Klog\obj\Debug\setup.pdb
