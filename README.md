@@ -32,14 +32,15 @@ If you find an error in the archives, like a wrong password or corrupt, feel fre
 
 Got anymore questions? Make an issue if so.
 If you wanna suggest malware to add, make a merge or chat in the discussion or issues!
+
+# The community
+[![](https://dcbadge.limes.pink/api/server/tM6Zbr7PeR)](https://discord.gg/tM6Zbr7PeR)
+
 # MISC
 
 ![Discord_OUHmjlML1n](https://github.com/user-attachments/assets/ccd90b21-9449-4921-bfbd-bab4e55ee724)
 
 It can be used for rizzing?...
-## The community
-[![](https://dcbadge.limes.pink/api/server/tM6Zbr7PeR)](https://discord.gg/tM6Zbr7PeR)
-
 
 ## Password for Encrypted Files
 If you are sure that you want to explore it, below is a clickable element that will display the password.
