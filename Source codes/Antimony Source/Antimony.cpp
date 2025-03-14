@@ -1,0 +1,243 @@
+﻿#pragma warning(disable: 4995)
+#pragma comment(lib, "Dwmapi.lib")
+#include <windows.h>
+#include <windowsx.h>
+#include <dwmapi.h>
+#include <cmath>
+#include <stdio.h>
+#include <tchar.h>
+#include <ShlObj.h>
+#include "Bytebeats.h"
+#include "Payloads.h"
+#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
+
+int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+    SetProcessDPIAware();
+    if (MessageBoxA(NULL, "WARNING!\r\n\r\nYou are running a HARMLESS MALWARE called Antimony.exe.\r\nIf you continue, Your data will NOT lost. You still can boot into Windows.\r\nIf you have photosensitive epilepsy, Please DON'T run this program.\r\n\r\nWell, If you want to run this harmless malware, Just simply click \"Yes\", Otherwise Click \"No\" to quit.", "WARNING - Antimony.exe", MB_YESNO | MB_ICONEXCLAMATION) == IDYES) {
+        if (MessageBoxA(NULL, "LAST WARNING!!!\r\n\r\nIF YOU HAVE PHOTOSENSITIVE EPILEPSY, PLEASE DON'T RUN THIS PROGRAM.\r\nEVEN THIS MALWARE IS HARMLESS, THE CREATOR IS STILL NOT RESPONSIBLE FOR ANY DAMAGES.\r\n\r\nDo you still want to continue? No more warnings anymore.", "LAST WARNING!!! - Antimony.exe", MB_YESNO | MB_ICONEXCLAMATION) == IDYES) {
+            Sleep(3000);
+            DwmEnableComposition(0);
+            Sleep(500);
+            HANDLE thread1 = CreateThread(0, 0, Payload1_num1, 0, 0, 0);
+            HANDLE thread2 = CreateThread(0, 0, Payload1_num2, 0, 0, 0);
+            HANDLE thread3 = CreateThread(0, 0, Payload1_num3, 0, 0, 0);
+            HANDLE thread4 = CreateThread(0, 0, Payload1_num4, 0, 0, 0);
+            HANDLE threadSanjiaoxing = CreateThread(0, 0, Sanjiaoxing, 0, 0, 0);
+            sound1();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            TerminateThread(thread3, 0);
+            CloseHandle(thread3);
+            TerminateThread(thread4, 0);
+            CloseHandle(thread4);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload2_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload2_num2, 0, 0, 0);
+            sound2();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload3_num1, 0, 0, 0);
+            sound3();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload4_num1, 0, 0, 0);
+            sound4();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload5_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload5_num2, 0, 0, 0);
+            thread3 = CreateThread(0, 0, Payload5_num3, 0, 0, 0);
+            HANDLE threaddrawtexts = CreateThread(0, 0, DrawTexts, 0, 0, 0);
+            sound5();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            TerminateThread(thread3, 0);
+            CloseHandle(thread3);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload6_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload6_num2, 0, 0, 0);
+            thread3 = CreateThread(0, 0, DrawIcons, 0, 0, 0);
+            thread4 = CreateThread(0, 0, DrawCursors, 0, 0, 0);
+            sound6();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            TerminateThread(thread3, 0);
+            CloseHandle(thread3);
+            TerminateThread(thread4, 0);
+            CloseHandle(thread4);
+            TerminateThread(threadSanjiaoxing, 0);
+            CloseHandle(threadSanjiaoxing);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload7_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload7_num2, 0, 0, 0);
+            sound7();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload8_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload8_num2, 0, 0, 0);
+            sound8();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload9_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, DrawIcons, 0, 0, 0);
+            sound9();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload10_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload10_num2, 0, 0, 0);
+            sound10();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload11_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload11_num2, 0, 0, 0);
+            sound11();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            TerminateThread(threaddrawtexts, 0);
+            CloseHandle(threaddrawtexts);
+            InvalidateRect(0, 0, 0);
+            threadSanjiaoxing = CreateThread(0, 0, Sanjiaoxing, 0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload12_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload12_num2, 0, 0, 0);
+            thread3 = CreateThread(0, 0, DrawIcons, 0, 0, 0);
+            thread4 = CreateThread(0, 0, DrawCursors, 0, 0, 0);
+            sound12();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload13_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload13_num2, 0, 0, 0);
+            HANDLE thread3_2 = CreateThread(0, 0, DrawTexts, 0, 0, 0);
+            HANDLE thread4_2 = CreateThread(0, 0, Payload13_num3, 0, 0, 0);
+            sound13();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload14_num1, 0, 0, 0);
+            sound14();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload15_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload15_num2, 0, 0, 0);
+            HANDLE thread3_3 = CreateThread(0, 0, Payload15_num3, 0, 0, 0);
+            sound15();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            TerminateThread(thread3_3, 0);
+            CloseHandle(thread3_3);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload16_num1, 0, 0, 0);
+            HANDLE thread2_2 = CreateThread(0, 0, Payload16_num2, 0, 0, 0);
+            HANDLE thread5 = CreateThread(0, 0, Payload16_num3, 0, 0, 0);
+            sound16();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread3, 0);
+            CloseHandle(thread3);
+            TerminateThread(thread3_2, 0);
+            CloseHandle(thread3_2);
+            TerminateThread(thread4, 0);
+            CloseHandle(thread4);
+            TerminateThread(thread5, 0);
+            CloseHandle(thread5);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload17_num1, 0, 0, 0);
+            thread3_3 = CreateThread(0, 0, DrawTexts2, 0, 0, 0);
+            sound17();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload18_num1, 0, 0, 0);
+            sound18();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload19_num1, 0, 0, 0);
+            thread2 = CreateThread(0, 0, Payload19_num2, 0, 0, 0);
+            HANDLE thread3_4 = CreateThread(0, 0, Payload19_num3, 0, 0, 0);
+            HANDLE thread4_3 = CreateThread(0, 0, Payload19_num4, 0, 0, 0);
+            sound19();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            TerminateThread(thread2, 0);
+            CloseHandle(thread2);
+            TerminateThread(thread2_2, 0);
+            CloseHandle(thread2_2);
+            TerminateThread(thread3_3, 0);
+            CloseHandle(thread3_3);
+            TerminateThread(thread3_4, 0);
+            CloseHandle(thread3_4);
+            TerminateThread(thread4_2, 0);
+            CloseHandle(thread4_2);
+            TerminateThread(thread4_3, 0);
+            CloseHandle(thread4_3);
+            TerminateThread(threadSanjiaoxing, 0);
+            CloseHandle(threadSanjiaoxing);
+            InvalidateRect(0, 0, 0);
+            thread1 = CreateThread(0, 0, Payload20_num1, 0, 0, 0);
+            sound20();
+            Sleep(30000);
+            TerminateThread(thread1, 0);
+            CloseHandle(thread1);
+            InvalidateRect(0, 0, 0);
+            ExitProcess(0);
+        }
+        else {
+            ExitProcess(0);
+        }
+    }
+    else {
+        ExitProcess(0);
+    }
+}
