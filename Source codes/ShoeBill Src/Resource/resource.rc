@@ -1,0 +1,34 @@
+#include "resource.h"
+#include <windows.h>
+
+IDB_PNG     PNG     "..\\Resource\\image.png"
+IDW_AUDIO   WAVE    "..\\Resource\\Sound.wav"
+IDR_ICON    ICON    "..\\Resource\\icon.ico"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904B0"
+        {
+            VALUE "FileDescription", ""
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", ""
+            VALUE "LegalCopyright", "© EvilCorp"
+            VALUE "OriginalFilename", "Win32.Shoebill.Joke.Virus.exe"
+            VALUE "ProductName", "Shoebill.HorrorBird"
+            VALUE "ProductVersion", "1.0.0.0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0419, 1251
+    }
+}
