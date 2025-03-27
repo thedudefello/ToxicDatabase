@@ -1,0 +1,4 @@
+#include "resource.h"
+
+IDR_WAVE1 WAVE "..\\Resource\\sound.wav"
+IDI_ICON1 ICON "..\\Resource\\icon.ico"
