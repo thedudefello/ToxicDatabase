@@ -12,6 +12,8 @@
 <img src="https://img.shields.io/github/issues-raw/FelloBoiYuuka/ToxicDatabase.svg?style=flat&logo=github&logoColor=white"
 <a href="https://github.com/FelloBoiYuuka/ToxicDatabase/releases">
 <a href=https://github.com/FelloBoiYuuka/ToxicDatabase/archive/refs/heads/main.zip><img src=https://img.shields.io/badge/%F0%9F%93%A5%20Download_Repo-red></a>
+<p align="center">
+  Banner by @Commo512 <3
 </a>
 
 ## Main
