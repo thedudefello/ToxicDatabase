@@ -17,5 +17,5 @@
 4. I must know you
    I don't feel like making random strangers contribute to this, I **must** know you on Discord or any other social platforms before we can talk about that.
 5. Do not open issues for chatting with staff (Use Discussions, please)
-6. Star my repo before joining!
+6. Star my repo before joining.
 7. And that's it.
