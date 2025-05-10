@@ -4,3 +4,15 @@ C:\Users\David\source\repos\memzR\obj\Debug\memzR.csproj.AssemblyReference.cache
 C:\Users\David\source\repos\memzR\obj\Debug\memzR.csproj.CoreCompileInputs.cache
 C:\Users\David\source\repos\memzR\obj\Debug\memzR.exe
 C:\Users\David\source\repos\memzR\obj\Debug\memzR.pdb
+D:\Users\David\source\repos\memzR\bin\Debug\memzR.exe
+D:\Users\David\source\repos\memzR\bin\Debug\memzR.pdb
+D:\Users\David\source\repos\memzR\obj\Debug\memzR.csproj.AssemblyReference.cache
+D:\Users\David\source\repos\memzR\obj\Debug\memzR.csproj.CoreCompileInputs.cache
+D:\Users\David\source\repos\memzR\obj\Debug\memzR.exe
+D:\Users\David\source\repos\memzR\obj\Debug\memzR.pdb
+F:\Código\memzR-main\bin\Debug\memzR.exe
+F:\Código\memzR-main\bin\Debug\memzR.pdb
+F:\Código\memzR-main\obj\Debug\memzR.csproj.AssemblyReference.cache
+F:\Código\memzR-main\obj\Debug\memzR.csproj.CoreCompileInputs.cache
+F:\Código\memzR-main\obj\Debug\memzR.exe
+F:\Código\memzR-main\obj\Debug\memzR.pdb

