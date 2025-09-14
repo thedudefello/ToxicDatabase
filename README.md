@@ -1,4 +1,6 @@
 <h1 align="center">
+ I am no longer updating this database since I'd rather focus on real life. Anyone can fork the project and update it.
+<h1 align="center">
   <br>
   <img src=https://files.softicons.com/download/application-icons/malware-icons-by-deleket/ico/Radioactive.ico width="150">
   <br>
